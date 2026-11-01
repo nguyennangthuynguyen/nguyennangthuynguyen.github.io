@@ -400,6 +400,12 @@ button.btn { font: inherit; font-size: 15px; font-weight: 500; background: trans
 .keys dt { font-family: var(--mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--indigo); padding-top: 3px; }
 .keys dd { margin: 0; font-size: 15px; line-height: 1.55; }
 @media (max-width: 480px) { .keys div { grid-template-columns: 1fr; gap: 2px; } }
+/* education achievements */
+.wins { list-style: none; margin: 4px 0 0; padding: 0; border-top: 1px solid var(--line); max-width: 52ch; }
+.wins li { padding: 9px 0; border-bottom: 1px solid var(--line); font-size: 15px; line-height: 1.5; }
+.wins b { font-weight: 600; color: var(--indigo); }
+.edu-lead { font-size: 15px; color: var(--muted); margin: 0 0 12px; max-width: 52ch; }
+.edu-lead b { color: var(--ink); font-weight: 600; }
 /* threads posts */
 .collage.posts { aspect-ratio: auto; height: 610px; }
 .post { position: absolute; display: grid; gap: 10px; width: 84%; padding: 18px 20px; background: #fff; color: #101418; text-decoration: none; border-radius: 16px; border: 1px solid #e3e6ea; box-shadow: 0 22px 40px -22px rgba(16, 24, 40, .6), 0 2px 6px rgba(16, 24, 40, .08);
@@ -509,14 +515,16 @@ button.btn { font: inherit; font-size: 15px; font-weight: 500; background: trans
             <p class="where">FOREIGN TRADE UNIVERSITY · HANOI</p>
             <h3>Bachelor’s in Japanese-style International Business</h3>
             <p class="when">Vietnam-Japan College of Business and Innovation (VJCBI) · Sep 2022 – Mar 2027</p>
-            <p>Foreign Trade University (FTU) is one of Vietnam’s leading universities for economics, business and international trade. I study at its Vietnam-Japan College of Business and Innovation (VJCBI, formerly VJCC), where international business is taught through a Japanese lens.</p>
-            <p>We learn Japanese management ideas such as Kaizen, Just-in-Time and Monozukuri, and many of our classes are taught by Japanese lecturers. In the core V-BIZ 1, 2 and 3 courses we analyze real companies with structured frameworks, solve business cases and build business plans, and the X-Culture project puts us in global virtual teams that consult for real firms. Alongside the program I study Japanese (JLPT N4).</p>
+            <p class="edu-lead"><b>FTU</b> is one of Vietnam’s leading universities for economics, business and international trade. <b>VJCBI</b>, its Vietnam–Japan college, specializes in international business taught through Japanese management practice, with Japanese faculty.</p>
+            <ul class="wins">
+              <li><b>GPA 3.64/4.0</b>, first in my cohort in Business Analytics</li>
+              <li><b>Second Prize</b>, V-Business Plan Competition 2023 (Waseda University, JICA and FTU)</li>
+              <li><b>Top 10%</b> of 6,000+ participants, X-Culture global consulting project</li>
+              <li><b>A grades</b> in Financial Analysis, Japanese Style Production System and Supply Chain Management</li>
+            </ul>
           </div>
         </article>
       </div>
-      <ul class="chips" aria-label="Selected courses">
-        <li>Japanese Style Production System</li><li>Japanese Economy and Business</li><li>Japanese-style HRM</li><li>V-BIZ Business Plan</li><li>Supply Chain Management</li><li>Business Analytics</li>
-      </ul>
       <h3 class="lang-h">Language certificates</h3>
       <div class="langs">
         <div class="lang">
