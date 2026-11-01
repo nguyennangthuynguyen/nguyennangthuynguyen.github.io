@@ -406,6 +406,17 @@ button.btn { font: inherit; font-size: 15px; font-weight: 500; background: trans
 .wins b { font-weight: 600; color: var(--indigo); }
 .edu-lead { font-size: 15px; color: var(--muted); margin: 0 0 12px; max-width: 52ch; }
 .edu-lead b { color: var(--ink); font-weight: 600; }
+/* see more toggles in Research */
+details.more { margin-top: 2px; }
+details.more summary { list-style: none; display: inline-flex; align-items: center; gap: 8px; cursor: pointer; color: var(--indigo); font-size: 14px; font-weight: 500; padding: 2px 0; }
+details.more summary::-webkit-details-marker { display: none; }
+details.more summary::after { content: ""; width: 7px; height: 7px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: translateY(-2px) rotate(45deg); transition: transform .2s ease; }
+details.more[open] summary::after { transform: translateY(2px) rotate(-135deg); }
+details.more .more-close, details.more[open] .more-open { display: none; }
+details.more[open] .more-close { display: inline; }
+details.more[open] summary { margin-bottom: 10px; }
+details.more summary:focus-visible { outline: 2px solid var(--indigo); outline-offset: 3px; border-radius: 4px; }
+@media (prefers-reduced-motion: reduce) { details.more summary::after { transition: none; } }
 /* threads posts */
 .collage.posts { aspect-ratio: auto; height: 610px; }
 .post { position: absolute; display: grid; gap: 10px; width: 84%; padding: 18px 20px; background: #fff; color: #101418; text-decoration: none; border-radius: 16px; border: 1px solid #e3e6ea; box-shadow: 0 22px 40px -22px rgba(16, 24, 40, .6), 0 2px 6px rgba(16, 24, 40, .08);
@@ -515,12 +526,13 @@ button.btn { font: inherit; font-size: 15px; font-weight: 500; background: trans
             <p class="where">FOREIGN TRADE UNIVERSITY · HANOI</p>
             <h3>Bachelor’s in Japanese-style International Business</h3>
             <p class="when">Vietnam-Japan College of Business and Innovation (VJCBI) · Sep 2022 – Mar 2027</p>
-            <p class="edu-lead"><b>FTU</b> is one of Vietnam’s leading universities for economics, business and international trade. <b>VJCBI</b>, its Vietnam–Japan college, specializes in international business taught through Japanese management practice, with Japanese faculty.</p>
+            <p class="edu-lead">Founded in 1960, <b>Foreign Trade University (FTU)</b> is one of Vietnam’s leading public universities for economics, international business and finance, with some of the most competitive admissions in the country.</p>
+            <p class="edu-lead"><b>VJCBI</b>, formerly the VJCC Institute, grew out of a Vietnam–Japan government project supported by JICA. Its program is co-taught by Japanese professors, FTU lecturers and Japanese and Vietnamese business leaders, with company visits and real business planning in every year.</p>
             <ul class="wins">
               <li><b>GPA 3.64/4.0</b>, first in my cohort in Business Analytics</li>
-              <li><b>Second Prize</b>, V-Business Plan Competition 2023 (Waseda University, JICA and FTU)</li>
-              <li><b>Top 10%</b> of 6,000+ participants, X-Culture global consulting project</li>
-              <li><b>A grades</b> in Financial Analysis, Japanese Style Production System and Supply Chain Management</li>
+              <li><b>V-BIZ 1–3:</b> hands-on business planning projects. Second Prize, V-Business Plan Competition 2023 (Waseda University, JICA and FTU)</li>
+              <li><b>X-Culture:</b> market expansion strategy for Qualz.AI with a global virtual team, top 10% of 6,000+ participants on the pre-project test</li>
+              <li><b>Keieijuku seminars:</b> learned how real Vietnamese companies operate and apply Lean, Kaizen and Monozukuri</li>
             </ul>
           </div>
         </article>
@@ -572,14 +584,17 @@ button.btn { font: inherit; font-size: 15px; font-weight: 500; background: trans
             <p class="title">“Tính minh bạch thương hiệu và hành vi mua sản phẩm bền vững: Góc nhìn từ động lực xanh và giá trị cảm xúc” <span class="tr">[Brand transparency and sustainable purchasing behavior: Perspectives from green motivation and emotional value]</span></p>
             <span class="status pub-ok">Published · Journal of Asian Business and Economic Studies (JABES), 36(1), 90–106</span>
             <p class="doi">DOI: <a href="https://doi.org/10.24311/jabes/2025.36.1.08" target="_blank" rel="noopener">10.24311/jabes/2025.36.1.08</a></p>
-            <p class="abs">Using 357 consumer responses from across Vietnam and PLS-SEM, the study shows that brand transparency raises consumers’ intention to buy sustainable products, their green extrinsic motivation and the emotional value they feel. Green extrinsic motivation carries part of the effect of transparency on purchase intention, while emotional value does not act as a significant mediator. The wider award-winning project behind the paper also used ANN, PROCESS Macro and fsQCA.</p>
-            <p class="meta">Second Prize, Ministerial-Level Science and Technology Award for University Students 2025 · First Prize, FTU Student Research Contest 2025 · Semi-final, Eureka Scientific Research Award 2025</p>
-            <div class="thumbs photos">
-              <button type="button" data-full="nckh_1.jpg" data-cap="Award ceremony, Science and Technology Award for University Students 2025, Nha Trang University"><img src="nckh_1.jpg" alt="Team at the award ceremony in Nha Trang" loading="lazy"></button>
-              <button type="button" data-full="nckh_2.jpg" data-cap="Final round in Nha Trang, with our supervisor Dr. Dinh Van Hoang"><img src="nckh_2.jpg" alt="Team with supervisor at the final round" loading="lazy"></button>
-              <button type="button" class="cert" data-full="nckh_cap_bo_giay_chung_nhan.jpg" data-cap="Certificate, Second Prize, Ministerial-Level Science and Technology Award for University Students 2025"><img src="nckh_cap_bo_giay_chung_nhan.jpg" alt="Second Prize certificate" loading="lazy"></button>
-              <button type="button" class="cert" data-full="nckh_cap_truong_giay_khen.jpg" data-cap="First Prize, FTU Student Research Contest 2025"><img src="nckh_cap_truong_giay_khen.jpg" alt="FTU First Prize certificate" loading="lazy"></button>
-            </div>
+            <details class="more">
+              <summary><span class="more-open">See more</span><span class="more-close">See less</span></summary>
+              <p class="abs">Using 357 consumer responses from across Vietnam and PLS-SEM, the study shows that brand transparency raises consumers’ intention to buy sustainable products, their green extrinsic motivation and the emotional value they feel. Green extrinsic motivation carries part of the effect of transparency on purchase intention, while emotional value does not act as a significant mediator. The wider award-winning project behind the paper also used ANN, PROCESS Macro and fsQCA.</p>
+              <p class="meta">Second Prize, Ministerial-Level Science and Technology Award for University Students 2025 · First Prize, FTU Student Research Contest 2025 · Semi-final, Eureka Scientific Research Award 2025</p>
+              <div class="thumbs photos">
+                <button type="button" data-full="nckh_1.jpg" data-cap="Award ceremony, Science and Technology Award for University Students 2025, Nha Trang University"><img src="nckh_1.jpg" alt="Team at the award ceremony in Nha Trang" loading="lazy"></button>
+                <button type="button" data-full="nckh_2.jpg" data-cap="Final round in Nha Trang, with our supervisor Dr. Dinh Van Hoang"><img src="nckh_2.jpg" alt="Team with supervisor at the final round" loading="lazy"></button>
+                <button type="button" class="cert" data-full="nckh_cap_bo_giay_chung_nhan.jpg" data-cap="Certificate, Second Prize, Ministerial-Level Science and Technology Award for University Students 2025"><img src="nckh_cap_bo_giay_chung_nhan.jpg" alt="Second Prize certificate" loading="lazy"></button>
+                <button type="button" class="cert" data-full="nckh_cap_truong_giay_khen.jpg" data-cap="First Prize, FTU Student Research Contest 2025"><img src="nckh_cap_truong_giay_khen.jpg" alt="FTU First Prize certificate" loading="lazy"></button>
+              </div>
+            </details>
           </div>
         </li>
         <li class="pub">
@@ -596,10 +611,13 @@ button.btn { font: inherit; font-size: 15px; font-weight: 500; background: trans
             <p class="byline">Nguyen, T. Q., Le, T. H. T., <b>Nguyen, N. T. N.</b>, Doan, V. T. V., &amp; Mai, T. L. T.</p>
             <p class="title">“The Impact of Green Credit Policy and Artificial Intelligence Transformation on the Operations of Vietnamese Commercial Banks”</p>
             <span class="status talk">Presented · ICFAA 2026, National Economics University, Hanoi, 15 Oct 2026</span>
-            <p class="abs">With an unbalanced panel of 19 Vietnamese commercial banks (2015–2024) and a random-effects model with year fixed effects, the study tests how AI, fintech and green banking policies relate to bank profitability. AI is linked to higher ROE, while the first green banking decision (1408/QĐ-NHNN) is linked to lower returns and the later, broader decision (1604/QĐ-NHNN) to higher ROE and ROA, which suggests that implementation matters more than formal adoption. I collected the panel data, ran the regressions, wrote the results section and presented the paper.</p>
-            <div class="thumbs">
-              <button type="button" data-full="icfaa_2026_presentation.jpg" data-cap="Certificate of Presentation, ICFAA 2026"><img src="icfaa_2026_presentation.jpg" alt="ICFAA 2026 certificate of presentation" loading="lazy"></button>
-            </div>
+            <details class="more">
+              <summary><span class="more-open">See more</span><span class="more-close">See less</span></summary>
+              <p class="abs">With an unbalanced panel of 19 Vietnamese commercial banks (2015–2024) and a random-effects model with year fixed effects, the study tests how AI, fintech and green banking policies relate to bank profitability. AI is linked to higher ROE, while the first green banking decision (1408/QĐ-NHNN) is linked to lower returns and the later, broader decision (1604/QĐ-NHNN) to higher ROE and ROA, which suggests that implementation matters more than formal adoption. I collected the panel data, ran the regressions, wrote the results section and presented the paper.</p>
+              <div class="thumbs">
+                <button type="button" data-full="icfaa_2026_presentation.jpg" data-cap="Certificate of Presentation, ICFAA 2026"><img src="icfaa_2026_presentation.jpg" alt="ICFAA 2026 certificate of presentation" loading="lazy"></button>
+              </div>
+            </details>
           </div>
         </li>
         <li class="pub">
@@ -608,7 +626,10 @@ button.btn { font: inherit; font-size: 15px; font-weight: 500; background: trans
             <p class="byline">Research Lab, Foreign Trade University · Principal Investigator: Dr. Dinh Van Hoang</p>
             <p class="title">“Corporate Digital Responsibility and Consumer Responses” (working title)</p>
             <span class="status ongoing">Ongoing · since July 2026</span>
-            <p class="abs">A 2×2 between-subjects experiment on how firms' practices in digital environments shape consumer responses. I collected and cleaned 600 responses from Gen Z and Gen X participants and test mediation and cohort–treatment interactions with PROCESS Models 4 and 8 and two-way ANOVA.</p>
+            <details class="more">
+              <summary><span class="more-open">See more</span><span class="more-close">See less</span></summary>
+              <p class="abs">A 2×2 between-subjects experiment on how firms' practices in digital environments shape consumer responses. I collected and cleaned 600 responses from Gen Z and Gen X participants and test mediation and cohort–treatment interactions with PROCESS Models 4 and 8 and two-way ANOVA.</p>
+            </details>
           </div>
         </li>
       </ol>
