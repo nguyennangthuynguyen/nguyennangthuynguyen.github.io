@@ -417,6 +417,17 @@ details.more[open] .more-close { display: inline; }
 details.more[open] summary { margin-bottom: 10px; }
 details.more summary:focus-visible { outline: 2px solid var(--indigo); outline-offset: 3px; border-radius: 4px; }
 @media (prefers-reduced-motion: reduce) { details.more summary::after { transition: none; } }
+/* academic: crisp numbers */
+.edu-facts { margin: 0 0 16px; border-top: 1px solid var(--line); }
+.edu-facts div { display: grid; grid-template-columns: 64px 1fr; gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--line); }
+.edu-facts dt { font-family: var(--mono); font-size: 12px; letter-spacing: .06em; color: var(--indigo); padding-top: 2px; }
+.edu-facts dd { margin: 0; font-size: 14.5px; line-height: 1.5; }
+.stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.stat { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; display: grid; gap: 4px; align-content: start; }
+.stat b { font-family: var(--display); font-weight: 600; font-size: 28px; line-height: 1; color: var(--ink); font-variant-numeric: tabular-nums; }
+.stat b small { font-size: 15px; color: var(--muted); font-weight: 500; }
+.stat span { font-size: 13px; line-height: 1.4; color: var(--muted); }
+.pub .nums { font-family: var(--mono); font-size: 12.5px; color: var(--data); margin: -2px 0 8px; letter-spacing: .02em; }
 /* threads posts */
 .collage.posts { aspect-ratio: auto; height: 610px; }
 .post { position: absolute; display: grid; gap: 10px; width: 84%; padding: 18px 20px; background: #fff; color: #101418; text-decoration: none; border-radius: 16px; border: 1px solid #e3e6ea; box-shadow: 0 22px 40px -22px rgba(16, 24, 40, .6), 0 2px 6px rgba(16, 24, 40, .08);
@@ -472,11 +483,11 @@ details.more summary:focus-visible { outline: 2px solid var(--indigo); outline-o
       <ul>
         <li><a href="#education">Education</a></li>
         <li><a href="#research">Research</a></li>
+        <li><a href="#awards">Awards</a></li>
         <li><a href="#ventures">Ventures</a></li>
         <li><a href="#content">Content</a></li>
         <li><a href="#global">Global</a></li>
         <li><a href="#gallery">Moments</a></li>
-        <li><a href="#awards">Awards</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -526,14 +537,16 @@ details.more summary:focus-visible { outline: 2px solid var(--indigo); outline-o
             <p class="where">FOREIGN TRADE UNIVERSITY · HANOI</p>
             <h3>Bachelor’s in Japanese-style International Business</h3>
             <p class="when">Vietnam-Japan College of Business and Innovation (VJCBI) · Sep 2022 – Mar 2027</p>
-            <p class="edu-lead">Founded in 1960, <b>Foreign Trade University (FTU)</b> is one of Vietnam’s leading public universities for economics, international business and finance, with some of the most competitive admissions in the country.</p>
-            <p class="edu-lead"><b>VJCBI</b>, formerly the VJCC Institute, grew out of a Vietnam–Japan government project supported by JICA. Its program is co-taught by Japanese professors, FTU lecturers and Japanese and Vietnamese business leaders, with company visits and real business planning in every year.</p>
-            <ul class="wins">
-              <li><b>GPA 3.64/4.0</b>, first in my cohort in Business Analytics</li>
-              <li><b>V-BIZ 1–3:</b> hands-on business planning projects. Second Prize, V-Business Plan Competition 2023 (Waseda University, JICA and FTU)</li>
-              <li><b>X-Culture:</b> market expansion strategy for Qualz.AI with a global virtual team, top 10% of 6,000+ participants on the pre-project test</li>
-              <li><b>Keieijuku seminars:</b> learned how real Vietnamese companies operate and apply Lean, Kaizen and Monozukuri</li>
-            </ul>
+            <dl class="edu-facts">
+              <div><dt>FTU</dt><dd>Est. 1960 · public · economics, international business, finance</dd></div>
+              <div><dt>VJCBI</dt><dd>Vietnam–Japan college backed by JICA · co-taught by Japanese professors, FTU lecturers and business leaders</dd></div>
+            </dl>
+            <div class="stats">
+              <div class="stat"><b>3.64<small>/4.0</small></b><span>Cumulative GPA</span></div>
+              <div class="stat"><b>#1</b><span>in cohort, Business Analytics (R models on 6,700+ property records)</span></div>
+              <div class="stat"><b>2nd</b><span>Prize, V-Business Plan Competition 2023</span></div>
+              <div class="stat"><b>Top 10%</b><span>of 6,000+ participants, X-Culture</span></div>
+            </div>
           </div>
         </article>
       </div>
@@ -559,8 +572,8 @@ details.more summary:focus-visible { outline: 2px solid var(--indigo); outline-o
         </div>
       </div>
       <ul class="online">
-        <li><span class="where">OSAKA · EXCHANGE</span><div><strong>Kansai University</strong>, exchange semester · Apr–Sep 2025<p>One of two students nominated by FTU. <a href="#album-kansai">See photos →</a></p></div></li>
-        <li><span class="where">HARBIN · SUMMER</span><div><strong>Harbin Institute of Technology</strong>, Global Summer School · Jul 2026<p><a href="#album-hit">See photos →</a></p></div></li>
+        <li><span class="where">OSAKA · EXCHANGE</span><div><strong>Kansai University</strong>, exchange semester · Apr–Sep 2025<p>1 of 2 FTU nominees · Yasuhara Memorial Foundation scholarship · S grades in Business for SDGs, Sustainability: An Interdisciplinary Approach, and Japanese Industries and Companies · <a href="#album-kansai">Story →</a></p></div></li>
+        <li><span class="where">HARBIN · SUMMER</span><div><strong>Harbin Institute of Technology</strong>, Global Summer School · Jul 2026<p>Only FTU nominee · 93–94/100 in Information Systems Research in the Gen AI Era and Managerial Decision-making · <a href="#album-hit">Story →</a></p></div></li>
       </ul>
     </div>
   </div>
@@ -583,6 +596,7 @@ details.more summary:focus-visible { outline: 2px solid var(--indigo); outline-o
             <p class="byline">Dinh, V. H., Vu, T. T. L., Le, A. Q., &amp; <b>Nguyen, N. T. N.</b> (2025)</p>
             <p class="title">“Tính minh bạch thương hiệu và hành vi mua sản phẩm bền vững: Góc nhìn từ động lực xanh và giá trị cảm xúc” <span class="tr">[Brand transparency and sustainable purchasing behavior: Perspectives from green motivation and emotional value]</span></p>
             <span class="status pub-ok">Published · Journal of Asian Business and Economic Studies (JABES), 36(1), 90–106</span>
+            <p class="nums">n = 357 · 3 regions of Vietnam · PLS-SEM · Second Prize, national award 2025</p>
             <p class="doi">DOI: <a href="https://doi.org/10.24311/jabes/2025.36.1.08" target="_blank" rel="noopener">10.24311/jabes/2025.36.1.08</a></p>
             <details class="more">
               <summary><span class="more-open">See more</span><span class="more-close">See less</span></summary>
@@ -602,7 +616,7 @@ details.more summary:focus-visible { outline: 2px solid var(--indigo); outline-o
           <div>
             <p class="byline">Nguyen, H. M., Dinh, V. H., Vu, T. T. L., &amp; Nguyen, N. T. N.</p>
             <p class="title">“Navigating Green Skepticism: From Digital Sustainability Transparency to Green Brand Advocacy”</p>
-            <span class="status review">Under review · Journal of Brand Management</span>
+            <span class="status review">Under review · Journal of Brand Management (Q1)</span>
           </div>
         </li>
         <li class="pub">
@@ -611,6 +625,7 @@ details.more summary:focus-visible { outline: 2px solid var(--indigo); outline-o
             <p class="byline">Nguyen, T. Q., Le, T. H. T., <b>Nguyen, N. T. N.</b>, Doan, V. T. V., &amp; Mai, T. L. T.</p>
             <p class="title">“The Impact of Green Credit Policy and Artificial Intelligence Transformation on the Operations of Vietnamese Commercial Banks”</p>
             <span class="status talk">Presented · ICFAA 2026, National Economics University, Hanoi, 15 Oct 2026</span>
+            <p class="nums">19 banks · 2015–2024 panel · random-effects regression</p>
             <details class="more">
               <summary><span class="more-open">See more</span><span class="more-close">See less</span></summary>
               <p class="abs">With an unbalanced panel of 19 Vietnamese commercial banks (2015–2024) and a random-effects model with year fixed effects, the study tests how AI, fintech and green banking policies relate to bank profitability. AI is linked to higher ROE, while the first green banking decision (1408/QĐ-NHNN) is linked to lower returns and the later, broader decision (1604/QĐ-NHNN) to higher ROE and ROA, which suggests that implementation matters more than formal adoption. I collected the panel data, ran the regressions, wrote the results section and presented the paper.</p>
@@ -626,6 +641,7 @@ details.more summary:focus-visible { outline: 2px solid var(--indigo); outline-o
             <p class="byline">Research Lab, Foreign Trade University · Principal Investigator: Dr. Dinh Van Hoang</p>
             <p class="title">“Corporate Digital Responsibility and Consumer Responses” (working title)</p>
             <span class="status ongoing">Ongoing · since July 2026</span>
+            <p class="nums">n = 600 · 2×2 experiment · Gen Z and Gen X</p>
             <details class="more">
               <summary><span class="more-open">See more</span><span class="more-close">See less</span></summary>
               <p class="abs">A 2×2 between-subjects experiment on how firms' practices in digital environments shape consumer responses. I collected and cleaned 600 responses from Gen Z and Gen X participants and test mediation and cohort–treatment interactions with PROCESS Models 4 and 8 and two-way ANOVA.</p>
@@ -642,6 +658,45 @@ details.more summary:focus-visible { outline: 2px solid var(--indigo); outline-o
   </div>
 </section>
 
+<section class="block" id="awards">
+  <div class="wrap">
+    <div class="label"><h2>Honors &amp; Awards</h2><p>Competitions and scholarships, newest first</p></div>
+    <div class="content">
+      <ol class="timeline">
+        <li><time datetime="2026-01">Jan 2026</time><div><strong>Top 10 Outstanding Projects</strong>, TEC Go Startup Program<p>Foreign Trade University · with <a href="#ventures">Orango</a></p></div></li>
+        <li><time datetime="2025-11">Nov 2025</time><div><strong>Second Prize</strong>, Ministerial-Level Science and Technology Award for University Students<p>Ho Chi Minh Communist Youth Union Central Committee, certified by the Ministry of Education and Training</p></div></li>
+        <li><time datetime="2025-10">Oct 2025</time><div><strong>Semi-final</strong>, Eureka Scientific Research Award 2025<p>Ho Chi Minh City Communist Youth Union, Vietnam National University Ho Chi Minh City</p></div></li>
+        <li><time datetime="2025-10">Oct 2025</time><div><strong>Top 4 Exceptional Team</strong>, Youth Debate on Food Loss and Waste<p>Embassy of Denmark in Vietnam</p></div></li>
+        <li><time datetime="2025-06">Jun 2025</time><div><strong>First Prize</strong>, Student Scientific Research Contest<p>Foreign Trade University</p></div></li>
+        <li><time datetime="2025-04">Apr 2025</time><div><strong>Yasuhara Memorial Foundation Scholarship</strong><p>For the Kansai University exchange, one of at most two FTU recipients</p></div></li>
+        <li><time datetime="2024-11">Nov 2024</time><div><strong>Top 15</strong>, Environmental Case Challenge RE-PLASTIC<p>Unilever and YouthSpeak, AIESEC in Vietnam</p></div></li>
+        <li><time datetime="2023-07">Jul 2023</time><div><strong>Second Prize</strong>, Final Round, V-Business Plan Competition<p>Waseda University, JICA Vietnam VJCC Project and Foreign Trade University</p></div></li>
+      </ol>
+
+      <details class="certs">
+        <summary>View certificates</summary>
+        <div class="gallery">
+        <button type="button" data-full="nckh_cap_bo_giay_chung_nhan.jpg" data-cap="Second Prize certificate, Ministry of Education and Training (2025)"><img src="nckh_cap_bo_giay_chung_nhan.jpg" alt="" loading="lazy"><span>Second Prize · Ministry of Education and Training</span></button>
+        <button type="button" data-full="nckh_cap_bo_bang_khen_tw_doan.jpg" data-cap="Certificate of Merit, Central Committee of the Ho Chi Minh Communist Youth Union (2025)"><img src="nckh_cap_bo_bang_khen_tw_doan.jpg" alt="" loading="lazy"><span>Certificate of Merit · Central Youth Union</span></button>
+        <button type="button" data-full="nckh_cap_truong_giay_khen.jpg" data-cap="First Prize, FTU Student Research Contest (2025)"><img src="nckh_cap_truong_giay_khen.jpg" alt="" loading="lazy"><span>First Prize · FTU Student Research Contest</span></button>
+        <button type="button" data-full="icfaa_2026_presentation.jpg" data-cap="Certificate of Presentation, ICFAA 2026"><img src="icfaa_2026_presentation.jpg" alt="" loading="lazy"><span>Certificate of Presentation · ICFAA 2026</span></button>
+        <button type="button" data-full="oxford_ai_digital_government.jpg" data-cap="AI and Digital Transformation in Government, Oxford Saïd Business School and UNESCO (2026)"><img src="oxford_ai_digital_government.jpg" alt="" loading="lazy"><span>AI and Digital Transformation in Government · Oxford Saïd × UNESCO</span></button>
+        <button type="button" data-full="google_data_analytics.jpg" data-cap="Google Data Analytics Professional Certificate (2026)"><img src="google_data_analytics.jpg" alt="" loading="lazy"><span>Google Data Analytics</span></button>
+        <button type="button" data-full="google_business_intelligence.jpg" data-cap="Google Business Intelligence Professional Certificate (2026)"><img src="google_business_intelligence.jpg" alt="" loading="lazy"><span>Google Business Intelligence</span></button>
+        <button type="button" data-full="google_project_management.jpg" data-cap="Google Project Management Professional Certificate (2026)"><img src="google_project_management.jpg" alt="" loading="lazy"><span>Google Project Management</span></button>
+        <button type="button" data-full="unesco_ethics_of_ai.jpg" data-cap="Global MOOC on the Ethics of AI, UNESCO (2026)"><img src="unesco_ethics_of_ai.jpg" alt="" loading="lazy"><span>Ethics of AI · UNESCO</span></button>
+        <button type="button" data-full="xculture_certificate.jpg" data-cap="International Business Consulting Certificate, X-Culture (2025)"><img src="xculture_certificate.jpg" alt="" loading="lazy"><span>International Business Consulting · X-Culture</span></button>
+        <button type="button" data-full="eureka_2025.jpg" data-cap="Eureka Student Scientific Research Prize 2025"><img src="eureka_2025.jpg" alt="" loading="lazy"><span>Eureka Scientific Research Award 2025</span></button>
+        <button type="button" data-full="denmark_food_loss_debate.jpg" data-cap="Food Loss and Waste Debate, Embassy of Denmark (2025)"><img src="denmark_food_loss_debate.jpg" alt="" loading="lazy"><span>Food Loss and Waste Debate · Embassy of Denmark</span></button>
+        <button type="button" data-full="vietnam_singapore_changemaker_camp.jpg" data-cap="Vietnam–Singapore Changemaker Impact Camp (2024)"><img src="vietnam_singapore_changemaker_camp.jpg" alt="" loading="lazy"><span>Changemaker Impact Camp · FTU × SUSS</span></button>
+        <button type="button" data-full="vbiz_2023.jpg" data-cap="2023 Business Plan Competition, Final Round (VJCC, JICA, Waseda)"><img src="vbiz_2023.jpg" alt="" loading="lazy"><span>Second Prize · V-Business 2023</span></button>
+        <button type="button" data-full="panasonic_certificate.jpg" data-cap="Basic Business Philosophy and Basic Business Manner, Panasonic Vietnam (2024)"><img src="panasonic_certificate.jpg" alt="" loading="lazy"><span>Basic Business Philosophy · Panasonic</span></button>
+      </div>
+      </details>
+    </div>
+  </div>
+</section>
+
 <section class="block" id="ventures">
   <div class="wrap">
     <div class="label"><h2>Ventures</h2><p>Projects I started and keep building</p></div>
@@ -654,7 +709,8 @@ details.more summary:focus-visible { outline: 2px solid var(--indigo); outline-o
               <div class="logo"><img src="ife.png" alt="IELTS For Everyone logo"></div>
               <div><p class="where">EDUCATION · SINCE DEC 2023</p><h3>IELTS For Everyone (IFE)</h3><p class="v-role">Co-founder, IELTS teacher and Marketing Manager</p></div>
             </div>
-            <p>I started IFE in my second year at FTU and have run it alongside my studies ever since. I teach 100+ learners a year, have written 30+ lesson plans using content-based (CLIL) methods, and keep a community of learners together through offline meetups and our Instagram <a href="https://www.instagram.com/ieltsforeveryone.ife/" target="_blank" rel="noopener">@ieltsforeveryone.ife</a>. Our learners reach an average band of 6.5, and many go well beyond it.</p>
+            <p>I started IFE in my second year at FTU with one idea: IELTS should be within reach of everyone. Since then I have taught alongside my studies, writing lessons that teach English through real topics (CLIL) and keeping learners together through offline meetups and our Instagram <a href="https://www.instagram.com/ieltsforeveryone.ife/" target="_blank" rel="noopener">@ieltsforeveryone.ife</a>.</p>
+            <p>Today more than 100 learners study with us each year. Their average band is 6.5, and many go well beyond it.</p>
           </div>
         </article>
         <article class="story ig-story">
@@ -732,7 +788,8 @@ details.more summary:focus-visible { outline: 2px solid var(--indigo); outline-o
             <p class="where">JAPAN · OSAKA</p>
             <h3>Kansai University</h3>
             <p class="when">Exchange semester · Apr–Sep 2025</p>
-            <p>Yasuhara Memorial Foundation scholar, one of two students nominated by FTU. S or A grades in 90% of courses, including Business for SDGs and Sustainability: An Interdisciplinary Approach. Outside class there were cherry blossom picnics, cultural exchange events and group work with students from Japan and around the world.</p>
+            <p>In classes like Business for SDGs and Japanese Industries and Companies, I studied how Japanese companies build sustainability into their supply chains and daily work. I kept comparing them with the Vietnamese firms I knew from my program, and one question stayed with me: why do so many Vietnamese SMEs find this so hard?</p>
+            <p>That question became the starting point of my research. Outside class, Osaka gave me cherry blossom picnics, cultural exchange events and group projects with students from Japan and around the world.</p>
           </div>
         </article>
         <article class="story" id="album-hit">
@@ -741,7 +798,8 @@ details.more summary:focus-visible { outline: 2px solid var(--indigo); outline-o
             <p class="where">CHINA · HARBIN</p>
             <h3>Harbin Institute of Technology</h3>
             <p class="when">Global Summer School · 11–19 Jul 2026</p>
-            <p>The only student nominated by FTU for the program on Digital Economy and Intelligent Decision, with scores of 93–94/100 in courses on information systems research in the Gen AI era and managerial decision-making. The nine days also brought a visit to the HIT space museum and new friends from many countries.</p>
+            <p>Nine days in Harbin on digital economy and intelligent decision-making came just as my research was turning to AI in business decisions. Classes on information systems research in the Gen AI era and on managerial decision-making gave me new ways to think about that question.</p>
+            <p>Between classes I visited the HIT space museum and made friends from many countries.</p>
           </div>
         </article>
         <article class="story" id="album-camp">
@@ -774,7 +832,8 @@ details.more summary:focus-visible { outline: 2px solid var(--indigo); outline-o
             <p class="where">NHA TRANG UNIVERSITY · 2025</p>
             <h3>Science and Technology Award for University Students</h3>
             <p class="when">Final round and award ceremony</p>
-            <p>Our team from FTU won Second Prize at the national student research award with our study on brand transparency, after more than a year of work with our supervisor Dr. Dinh Van Hoang. The same study won First Prize at FTU’s Student Research Contest and earned a commendation from the Ho Chi Minh Communist Youth Union Central Committee.</p>
+            <p>For more than a year, our team studied how brand transparency shapes sustainable buying. I helped collect survey responses in all three regions of Vietnam and learned to combine SEM, neural networks, PROCESS and fsQCA, using each method to check the others. The final round and award ceremony in Nha Trang crowned that year.</p>
+            <p>The bigger lesson came afterwards. Feedback from an economist at a Japanese university showed me that surveys like ours cannot separate a capability from the firms that have it, and that is why I now want to learn causal methods.</p>
           </div>
         </article>
         <article class="story" id="album-denmark">
@@ -791,44 +850,6 @@ details.more summary:focus-visible { outline: 2px solid var(--indigo); outline-o
   </div>
 </section>
 
-<section class="block" id="awards">
-  <div class="wrap">
-    <div class="label"><h2>Honors &amp; Awards</h2><p>Competitions and scholarships, newest first</p></div>
-    <div class="content">
-      <ol class="timeline">
-        <li><time datetime="2026-01">Jan 2026</time><div><strong>Top 10 Outstanding Projects</strong>, TEC Go Startup Program<p>Foreign Trade University · with <a href="#ventures">Orango</a></p></div></li>
-        <li><time datetime="2025-11">Nov 2025</time><div><strong>Second Prize</strong>, Ministerial-Level Science and Technology Award for University Students<p>Ho Chi Minh Communist Youth Union Central Committee, certified by the Ministry of Education and Training</p></div></li>
-        <li><time datetime="2025-10">Oct 2025</time><div><strong>Semi-final</strong>, Eureka Scientific Research Award 2025<p>Ho Chi Minh City Communist Youth Union, Vietnam National University Ho Chi Minh City</p></div></li>
-        <li><time datetime="2025-10">Oct 2025</time><div><strong>Top 4 Exceptional Team</strong>, Youth Debate on Food Loss and Waste<p>Embassy of Denmark in Vietnam</p></div></li>
-        <li><time datetime="2025-06">Jun 2025</time><div><strong>First Prize</strong>, Student Scientific Research Contest<p>Foreign Trade University</p></div></li>
-        <li><time datetime="2025-04">Apr 2025</time><div><strong>Yasuhara Memorial Foundation Scholarship</strong><p>For the Kansai University exchange, one of at most two FTU recipients</p></div></li>
-        <li><time datetime="2024-11">Nov 2024</time><div><strong>Top 15</strong>, Environmental Case Challenge RE-PLASTIC<p>Unilever and YouthSpeak, AIESEC in Vietnam</p></div></li>
-        <li><time datetime="2023-07">Jul 2023</time><div><strong>Second Prize</strong>, Final Round, V-Business Plan Competition<p>Waseda University, JICA Vietnam VJCC Project and Foreign Trade University</p></div></li>
-      </ol>
-
-      <details class="certs">
-        <summary>View certificates</summary>
-        <div class="gallery">
-        <button type="button" data-full="nckh_cap_bo_giay_chung_nhan.jpg" data-cap="Second Prize certificate, Ministry of Education and Training (2025)"><img src="nckh_cap_bo_giay_chung_nhan.jpg" alt="" loading="lazy"><span>Second Prize · Ministry of Education and Training</span></button>
-        <button type="button" data-full="nckh_cap_bo_bang_khen_tw_doan.jpg" data-cap="Certificate of Merit, Central Committee of the Ho Chi Minh Communist Youth Union (2025)"><img src="nckh_cap_bo_bang_khen_tw_doan.jpg" alt="" loading="lazy"><span>Certificate of Merit · Central Youth Union</span></button>
-        <button type="button" data-full="nckh_cap_truong_giay_khen.jpg" data-cap="First Prize, FTU Student Research Contest (2025)"><img src="nckh_cap_truong_giay_khen.jpg" alt="" loading="lazy"><span>First Prize · FTU Student Research Contest</span></button>
-        <button type="button" data-full="icfaa_2026_presentation.jpg" data-cap="Certificate of Presentation, ICFAA 2026"><img src="icfaa_2026_presentation.jpg" alt="" loading="lazy"><span>Certificate of Presentation · ICFAA 2026</span></button>
-        <button type="button" data-full="oxford_ai_digital_government.jpg" data-cap="AI and Digital Transformation in Government, Oxford Saïd Business School and UNESCO (2026)"><img src="oxford_ai_digital_government.jpg" alt="" loading="lazy"><span>AI and Digital Transformation in Government · Oxford Saïd × UNESCO</span></button>
-        <button type="button" data-full="google_data_analytics.jpg" data-cap="Google Data Analytics Professional Certificate (2026)"><img src="google_data_analytics.jpg" alt="" loading="lazy"><span>Google Data Analytics</span></button>
-        <button type="button" data-full="google_business_intelligence.jpg" data-cap="Google Business Intelligence Professional Certificate (2026)"><img src="google_business_intelligence.jpg" alt="" loading="lazy"><span>Google Business Intelligence</span></button>
-        <button type="button" data-full="google_project_management.jpg" data-cap="Google Project Management Professional Certificate (2026)"><img src="google_project_management.jpg" alt="" loading="lazy"><span>Google Project Management</span></button>
-        <button type="button" data-full="unesco_ethics_of_ai.jpg" data-cap="Global MOOC on the Ethics of AI, UNESCO (2026)"><img src="unesco_ethics_of_ai.jpg" alt="" loading="lazy"><span>Ethics of AI · UNESCO</span></button>
-        <button type="button" data-full="xculture_certificate.jpg" data-cap="International Business Consulting Certificate, X-Culture (2025)"><img src="xculture_certificate.jpg" alt="" loading="lazy"><span>International Business Consulting · X-Culture</span></button>
-        <button type="button" data-full="eureka_2025.jpg" data-cap="Eureka Student Scientific Research Prize 2025"><img src="eureka_2025.jpg" alt="" loading="lazy"><span>Eureka Scientific Research Award 2025</span></button>
-        <button type="button" data-full="denmark_food_loss_debate.jpg" data-cap="Food Loss and Waste Debate, Embassy of Denmark (2025)"><img src="denmark_food_loss_debate.jpg" alt="" loading="lazy"><span>Food Loss and Waste Debate · Embassy of Denmark</span></button>
-        <button type="button" data-full="vietnam_singapore_changemaker_camp.jpg" data-cap="Vietnam–Singapore Changemaker Impact Camp (2024)"><img src="vietnam_singapore_changemaker_camp.jpg" alt="" loading="lazy"><span>Changemaker Impact Camp · FTU × SUSS</span></button>
-        <button type="button" data-full="vbiz_2023.jpg" data-cap="2023 Business Plan Competition, Final Round (VJCC, JICA, Waseda)"><img src="vbiz_2023.jpg" alt="" loading="lazy"><span>Second Prize · V-Business 2023</span></button>
-        <button type="button" data-full="panasonic_certificate.jpg" data-cap="Basic Business Philosophy and Basic Business Manner, Panasonic Vietnam (2024)"><img src="panasonic_certificate.jpg" alt="" loading="lazy"><span>Basic Business Philosophy · Panasonic</span></button>
-      </div>
-      </details>
-    </div>
-  </div>
-</section>
 
 
 
@@ -886,7 +907,6 @@ details.more summary:focus-visible { outline: 2px solid var(--indigo); outline-o
     </div>
   </div>
 </section>
-
 
 
 <section class="block contact" id="contact">
