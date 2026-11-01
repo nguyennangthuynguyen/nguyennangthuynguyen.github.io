@@ -394,6 +394,12 @@ button.btn { font: inherit; font-size: 15px; font-weight: 500; background: trans
 @media (max-width: 480px) { .cv-pages { padding: 8px; } }
 .cv-pages img { width: 100%; max-height: none; margin: 0; box-shadow: 0 6px 18px -8px rgba(0, 0, 0, .35); background: #fff; }
 .collage .ph img, .tile img, .tt img { filter: saturate(1.08) contrast(1.03); }
+/* hero key highlights */
+.keys { margin: 0 0 26px; max-width: 62ch; border-top: 1px solid var(--line); }
+.keys div { display: grid; grid-template-columns: 150px 1fr; gap: 16px; padding: 11px 0; border-bottom: 1px solid var(--line); }
+.keys dt { font-family: var(--mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--indigo); padding-top: 3px; }
+.keys dd { margin: 0; font-size: 15px; line-height: 1.55; }
+@media (max-width: 480px) { .keys div { grid-template-columns: 1fr; gap: 2px; } }
 /* threads posts */
 .collage.posts { aspect-ratio: auto; height: 610px; }
 .post { position: absolute; display: grid; gap: 10px; width: 84%; padding: 18px 20px; background: #fff; color: #101418; text-decoration: none; border-radius: 16px; border: 1px solid #e3e6ea; box-shadow: 0 22px 40px -22px rgba(16, 24, 40, .6), 0 2px 6px rgba(16, 24, 40, .08);
@@ -467,7 +473,12 @@ button.btn { font: inherit; font-size: 15px; font-weight: 500; background: trans
     <div>
       <h1>Nguyen Nang Thuy Nguyen</h1>
       <p class="tagline">I study how sustainability and AI shape what people buy and how businesses compete in Vietnam.</p>
-      <p class="bio">Welcome! I do research on sustainability, digital technology and consumer behavior at the FTU Research Lab, Foreign Trade University. Our team's study on brand transparency won Second Prize at Vietnam's national Science and Technology Award for University Students and was published in JABES. I have presented work on green finance and AI at ICFAA 2026, studied at Kansai University in Osaka and at Harbin Institute of Technology, co-founded the IELTS center IELTS For Everyone, and I am now building Orango, an AI teaching assistant for English classes.</p>
+      <p class="bio">Welcome! I research sustainability, digital technology and consumer behavior at the FTU Research Lab.</p>
+      <dl class="keys">
+        <div><dt>Research</dt><dd>Second Prize, national Science &amp; Technology Award for University Students · Published in JABES · Presented at ICFAA 2026</dd></div>
+        <div><dt>Global experience</dt><dd>Exchange semester at Kansai University, Osaka · Summer school at Harbin Institute of Technology</dd></div>
+        <div><dt>Ventures</dt><dd>Co-founder of IELTS For Everyone · Building Orango, an AI teaching assistant for English classes</dd></div>
+      </dl>
       <div class="links">
         <a class="btn primary" href="mailto:nguyennnt0703.work@gmail.com">Email me</a>
         <button type="button" class="btn" id="open-cv">View CV</button>
