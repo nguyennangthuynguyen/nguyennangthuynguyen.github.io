@@ -1,0 +1,905 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nguyen Nang Thuy Nguyen</title>
+<meta name="description" content="Nguyen Nang Thuy Nguyen, International Business student at Foreign Trade University, Vietnam. Research on sustainability, digital technology and consumer behavior.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: an academic homepage on a flat lavender ground with a single violet accent. No gradients. Sticky name bar, a two-column welcome, then sections that pair a narrow label column with a wide content column. Mint (--indigo token) for links and structure, moss for "published" states. */
+:root {
+  --paper: #f4f1fb;
+  --surface: #ffffff;
+  --ink: #1f1638;
+  --muted: #5f5878;
+  --line: #e2dcf1;
+  --indigo: #6d28d9;
+  --indigo-soft: #ece5fb;
+  --data: #6d28d9;
+  --moss: #2f6b3f;
+  --moss-soft: #e2f0e5;
+  --amber: #8a5a12;
+  --amber-soft: #f6ecd9;
+  --todo: #fff3b0;
+  --dots: rgba(109, 40, 217, .09);
+  --h1: #2e1065;
+  --btn-ink: #ffffff;
+  --display: "Newsreader", Georgia, "Times New Roman", serif;
+  --body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; color: var(--ink); font: 16px/1.65 var(--body); background: var(--paper); }
+.hero h1 { color: var(--h1); }
+img { max-width: 100%; display: block; }
+a { color: var(--indigo); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--indigo); outline-offset: 3px; border-radius: 4px; }
+.wrap { max-width: 1080px; margin: 0 auto; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+
+.draftbar { background: var(--todo); color: var(--ink); font-size: 14px; }
+.draftbar .wrap { padding-block: 8px; }
+.todo { background: var(--todo); border-radius: 3px; padding: 0 4px; font-style: normal; }
+
+header.top { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--paper) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 14px; flex-wrap: wrap; }
+.brand { font-family: var(--display); font-size: 20px; font-weight: 600; color: var(--ink); text-decoration: none; letter-spacing: .01em; }
+nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 4px 18px; flex-wrap: wrap; }
+nav a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500; }
+nav a:hover { color: var(--indigo); }
+
+.hero .wrap { display: grid; grid-template-columns: 1.35fr 1fr; gap: 48px; align-items: center; padding-block: 64px 56px; }
+.eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--indigo); margin: 0 0 14px; }
+h1 { font-family: var(--display); font-weight: 600; font-size: clamp(36px, 5vw, 54px); line-height: 1.08; margin: 0 0 14px; text-wrap: balance; }
+.tagline { font-size: 18px; color: var(--muted); margin: 0 0 22px; max-width: 46ch; }
+.hero p.bio { max-width: 62ch; margin: 0 0 24px; }
+.facts { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 26px; padding: 0; list-style: none; }
+.facts li { border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 4px 14px; font-size: 14px; font-variant-numeric: tabular-nums; }
+.facts b { font-weight: 600; }
+.links { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; border-radius: 8px; padding: 9px 16px; font-weight: 500; font-size: 15px; text-decoration: none; border: 1px solid var(--indigo); color: var(--indigo); }
+.btn.primary { background: var(--indigo); color: var(--surface); }
+.portrait { width: 100%; max-width: 380px; justify-self: end; margin: 0; }
+.portrait img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 14px; box-shadow: 0 18px 40px -24px rgba(22, 32, 46, .55); }
+.portrait figcaption { font-family: var(--mono); font-size: 11.5px; color: var(--muted); margin-top: 10px; letter-spacing: .04em; }
+.card .photo { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+.online { list-style: none; margin: 28px 0 0; padding: 0; border-top: 1px solid var(--line); }
+.online li { display: grid; grid-template-columns: 190px 1fr; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.online .where { font-family: var(--mono); font-size: 12px; color: var(--indigo); letter-spacing: .04em; padding-top: 3px; }
+.online strong { font-weight: 600; }
+.online p { margin: 2px 0 0; color: var(--muted); font-size: 15px; }
+.albums { display: grid; gap: 48px; }
+.album header { margin-bottom: 14px; }
+.album .meta { font-family: var(--mono); font-size: 12px; color: var(--indigo); letter-spacing: .04em; margin: 0 0 4px; text-transform: uppercase; }
+.album h3 { margin-bottom: 6px; }
+.album header p:last-child { margin: 0; max-width: 68ch; }
+.grid-photos { display: grid; grid-auto-rows: 160px; gap: 8px; }
+.grid-photos.n3 { grid-template-columns: 2fr 1fr; }
+.grid-photos.n3 button:first-child { grid-row: span 2; }
+.grid-photos.n4 { grid-template-columns: 2fr 1fr 1fr; }
+.grid-photos.n4 button:first-child { grid-row: span 2; }
+.grid-photos.n4 button:nth-child(4) { grid-column: span 2; }
+.grid-photos.n6 { grid-template-columns: repeat(3, 1fr); grid-auto-rows: 190px; }
+.grid-photos button { all: unset; cursor: zoom-in; border-radius: 8px; overflow: hidden; background: var(--line); }
+.grid-photos button:focus-visible { outline: 2px solid var(--indigo); outline-offset: 2px; }
+.grid-photos img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s ease; }
+.grid-photos button:hover img { transform: scale(1.03); }
+@media (prefers-reduced-motion: reduce) { .grid-photos img { transition: none; } }
+
+.ph { border: 1.5px dashed color-mix(in srgb, var(--indigo) 45%, var(--line)); background: var(--indigo-soft); border-radius: 12px; display: grid; place-items: center; text-align: center; color: var(--indigo); font-size: 13px; padding: 16px; min-height: 140px; }
+.ph span { font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; display: block; margin-bottom: 4px; }
+
+section.block { border-top: 1px solid var(--line); }
+section.block > .wrap { display: grid; grid-template-columns: 200px 1fr; gap: 40px; padding-block: 56px; }
+.label h2 { font-family: var(--display); font-weight: 600; font-size: 28px; line-height: 1.15; margin: 0; position: sticky; top: 84px; }
+.label p { color: var(--muted); font-size: 14px; margin: 8px 0 0; }
+.content { min-width: 0; }
+h3 { font-family: var(--display); font-weight: 600; font-size: 21px; margin: 0 0 10px; }
+.prose { max-width: 68ch; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 14px 0 0; }
+.chips li { font-family: var(--mono); font-size: 12px; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 3px 9px; }
+
+.pubs { list-style: none; margin: 34px 0 0; padding: 0; display: grid; gap: 28px; }
+.pub { display: grid; grid-template-columns: 44px 1fr; gap: 6px 14px; }
+.pub .num { font-family: var(--mono); color: var(--indigo); font-size: 15px; padding-top: 3px; }
+.pub .byline { font-size: 15px; color: var(--muted); margin: 0; }
+.pub .title { font-family: var(--display); font-size: 20px; line-height: 1.3; margin: 2px 0 8px; font-weight: 500; }
+.status { display: inline-block; font-family: var(--mono); font-size: 11.5px; letter-spacing: .04em; border-radius: 4px; padding: 2px 8px; margin: 0 0 10px; }
+.status.pub-ok { background: var(--moss-soft); color: var(--moss); }
+.status.review { background: var(--amber-soft); color: var(--amber); }
+.status.talk { background: var(--indigo-soft); color: var(--indigo); }
+.status.ongoing { background: var(--surface); color: var(--muted); border: 1px solid var(--line); }
+.pub .abs { margin: 0; max-width: 70ch; }
+.pub .title .tr { display: block; font-size: 16px; color: var(--muted); font-style: italic; margin-top: 4px; }
+.pub .doi { margin: -4px 0 10px; font-family: var(--mono); font-size: 13px; }
+.pub .meta { font-size: 14px; color: var(--muted); margin: 8px 0 0; }
+.thumbs { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
+.thumbs button { padding: 0; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); cursor: zoom-in; overflow: hidden; width: 120px; height: 84px; }
+.thumbs img { width: 100%; height: 100%; object-fit: cover; }
+
+.future { margin-top: 34px; border-left: 3px solid var(--indigo); padding: 4px 0 4px 18px; max-width: 70ch; }
+.future p { margin: 4px 0 0; }
+
+.timeline { list-style: none; margin: 0; padding: 0; }
+.timeline li { display: grid; grid-template-columns: 92px 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.timeline li:first-child { padding-top: 0; }
+.timeline time { font-family: var(--mono); font-size: 13px; color: var(--indigo); padding-top: 3px; font-variant-numeric: tabular-nums; }
+.timeline strong { font-weight: 600; }
+.timeline p { margin: 2px 0 0; color: var(--muted); font-size: 15px; }
+
+.gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; margin-top: 30px; }
+.gallery button { all: unset; cursor: zoom-in; display: grid; gap: 6px; }
+.gallery img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 6px; border: 1px solid var(--line); background: var(--surface); }
+.gallery span { font-size: 12.5px; color: var(--muted); line-height: 1.35; }
+
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 290px), 1fr)); gap: 16px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; display: grid; grid-template-rows: auto 1fr; }
+.card .ph { border-radius: 0; border-width: 0 0 1.5px 0; min-height: 0; aspect-ratio: 16 / 9; }
+.card .body { padding: 18px 20px 20px; min-width: 0; }
+.card .where { font-family: var(--mono); font-size: 12px; color: var(--indigo); letter-spacing: .04em; margin: 0 0 6px; }
+.card h3 { font-size: 19px; margin-bottom: 6px; }
+.card p { margin: 0; font-size: 15px; }
+.card .when { color: var(--muted); font-size: 14px; margin-bottom: 8px; }
+.tag-upcoming { font-family: var(--mono); font-size: 11px; background: var(--amber-soft); color: var(--amber); border-radius: 4px; padding: 1px 6px; margin-left: 6px; vertical-align: 2px; }
+
+.roles { list-style: none; margin: 0; padding: 0; display: grid; gap: 26px; }
+.role { display: grid; grid-template-columns: 56px 1fr; gap: 16px; }
+.role .logo { width: 56px; height: 56px; border-radius: 10px; border: 1px solid var(--line); background: #fff; display: grid; place-items: center; overflow: hidden; font-family: var(--mono); font-size: 11px; color: var(--muted); }
+.role .logo img { width: 100%; height: 100%; object-fit: contain; padding: 4px; }
+.role h3 { font-size: 19px; margin: 0; }
+.role .org { margin: 0; color: var(--muted); font-size: 15px; }
+.role ul { margin: 8px 0 0; padding-left: 18px; }
+.role li { margin: 2px 0; }
+
+.stories { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr)); gap: 16px; }
+
+.contact dl { display: grid; grid-template-columns: 110px 1fr; gap: 10px 16px; margin: 0; }
+.contact dt { font-family: var(--mono); font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); padding-top: 3px; }
+.contact dd { margin: 0; overflow-wrap: anywhere; }
+
+footer { border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+footer .wrap { padding-block: 24px; }
+
+dialog { border: none; border-radius: 10px; padding: 0; max-width: min(92vw, 1000px); background: var(--surface); color: var(--ink); }
+dialog::backdrop { background: rgba(10, 14, 22, .7); }
+dialog img { max-height: 80vh; width: auto; margin: 0 auto; }
+dialog .cap { display: flex; justify-content: space-between; gap: 12px; align-items: center; padding: 10px 14px; font-size: 14px; }
+dialog button { border: 1px solid var(--line); background: var(--paper); color: var(--ink); border-radius: 6px; padding: 4px 12px; font: inherit; cursor: pointer; }
+
+.social { list-style: none; display: flex; flex-wrap: wrap; gap: 6px 18px; padding: 0; margin: 18px 0 0; }
+.social a { font-weight: 500; font-size: 15px; }
+.highlights { padding-block: 0 56px; }
+.tiles { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+.tile { position: relative; display: block; border-radius: 12px; overflow: hidden; aspect-ratio: 3 / 4; text-decoration: none; background: var(--line); }
+.tile img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+.tile:hover img { transform: scale(1.04); }
+.tile span { position: absolute; left: 0; right: 0; bottom: 0; padding: 36px 12px 12px; color: #fff; font-size: 14px; font-weight: 500; line-height: 1.3; background: linear-gradient(to top, rgba(10, 16, 28, .82), rgba(10, 16, 28, 0)); }
+.thumbs.photos button { width: 220px; height: 146px; }
+.certs { margin-top: 36px; border-top: 1px solid var(--line); padding-top: 18px; }
+.certs summary { cursor: pointer; font-weight: 500; color: var(--indigo); }
+.certs .gallery { margin-top: 18px; }
+@media (prefers-reduced-motion: reduce) { .tile img { transition: none; } }
+@media (max-width: 820px) {
+  .tiles { grid-template-columns: repeat(2, 1fr); }
+  .tile:first-child { grid-column: span 2; aspect-ratio: 16 / 10; }
+  .tile { aspect-ratio: 4 / 5; }
+}
+@media (max-width: 480px) { .thumbs.photos button { width: calc(50% - 5px); height: 110px; } }
+.venture { display: grid; gap: 16px; }
+.venture + .venture { margin-top: 56px; padding-top: 48px; border-top: 1px solid var(--line); }
+.venture-head { display: grid; grid-template-columns: 64px 1fr; gap: 16px; align-items: center; }
+.venture-head .logo { width: 64px; height: 64px; border-radius: 14px; border: 1px solid var(--line); background: #fff; display: grid; place-items: center; overflow: hidden; }
+.venture-head .logo img { width: 100%; height: 100%; object-fit: contain; padding: 6px; }
+.venture-head .logo.mono { background: var(--indigo); color: var(--surface); border: none; font-family: var(--display); font-weight: 600; font-size: 22px; }
+.venture .where { font-family: var(--mono); font-size: 12px; color: var(--indigo); letter-spacing: .06em; margin: 0 0 2px; }
+.venture h3 { font-size: 26px; margin: 0; }
+.venture .v-role { margin: 2px 0 0; color: var(--muted); }
+.venture .prose { margin: 0; }
+.venture .sub { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 8px 0 0; }
+.scores { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.score { all: unset; cursor: zoom-in; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; display: grid; gap: 2px; }
+.score:hover { border-color: var(--indigo); }
+.score:focus-visible { outline: 2px solid var(--indigo); outline-offset: 2px; }
+.score .band { font-family: var(--display); font-size: 40px; font-weight: 600; line-height: 1; color: var(--indigo); font-variant-numeric: tabular-nums; }
+.score .detail { font-family: var(--mono); font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.score .view { font-size: 13px; color: var(--indigo); margin-top: 6px; }
+.grid-photos.n2 { grid-template-columns: 1.6fr 1fr; grid-auto-rows: 300px; }
+.grid-photos.n2.slides { grid-template-columns: 1fr 1fr; grid-auto-rows: auto; }
+.grid-photos.n2.slides img { aspect-ratio: 16 / 9; height: auto; }
+@media (max-width: 640px) {
+  .scores { grid-template-columns: 1fr; }
+  .grid-photos.n2 { grid-template-columns: 1fr; grid-auto-rows: 220px; }
+  .grid-photos.n2.slides { grid-auto-rows: auto; }
+}
+.ife-collage { display: grid; grid-template-columns: repeat(3, 1fr) 1.15fr; grid-template-rows: 250px 290px; gap: 16px; margin-top: 6px; }
+.ife-collage button { all: unset; cursor: zoom-in; border-radius: 14px; overflow: hidden; background: var(--surface); box-shadow: 0 18px 32px -20px rgba(22, 32, 46, .5); }
+.ife-collage button:focus-visible { outline: 2px solid var(--indigo); outline-offset: 3px; }
+.ife-collage img { width: 100%; height: 100%; object-fit: cover; }
+.ife-collage .c-wide { grid-column: 1 / 4; }
+.ife-collage .c-tall { grid-column: 4; grid-row: 1 / 3; }
+.ife-collage .c-phone { border: 1px solid var(--line); }
+.ife-collage .c-phone { padding: 14px; box-sizing: border-box; }
+.ife-collage .c-phone img { object-fit: contain; }
+.channels { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 22px; }
+.channel { display: grid; gap: 2px; padding: 16px 18px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; text-decoration: none; color: var(--ink); }
+.channel:hover { border-color: var(--indigo); }
+.ch-name { font-weight: 600; }
+.ch-handle { font-family: var(--mono); font-size: 12.5px; color: var(--indigo); }
+.ch-stats { font-size: 14px; color: var(--muted); margin-top: 4px; font-variant-numeric: tabular-nums; }
+.ch-stats b { color: var(--ink); font-weight: 600; }
+.pin { margin: 22px 0 6px; padding: 4px 0 4px 18px; border-left: 3px solid var(--indigo); font-family: var(--display); font-size: 21px; line-height: 1.4; max-width: 60ch; }
+.pin cite { display: block; font-family: var(--body); font-style: normal; font-size: 13px; color: var(--muted); margin-top: 8px; }
+#content .sub { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 26px 0 12px; }
+.tts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.tt { position: relative; display: block; aspect-ratio: 3 / 4; border-radius: 14px; overflow: hidden; background: #111; box-shadow: 0 18px 32px -20px rgba(22, 32, 46, .6); }
+.tt img { width: 100%; height: 100%; object-fit: cover; }
+.tt .views { position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,.6); color: #fff; font-family: var(--mono); font-size: 12px; border-radius: 999px; padding: 3px 9px; }
+.tt .tt-title { position: absolute; left: 0; right: 0; bottom: 0; padding: 30px 12px 12px; color: #fff; font-size: 14px; font-weight: 500; background: linear-gradient(to top, rgba(0,0,0,.8), transparent); }
+.asof { font-size: 12.5px; color: var(--muted); margin: 12px 0 0; }
+
+/* floating photos */
+@keyframes float { 0% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-7px) rotate(var(--tilt, 0deg)); } 100% { transform: translateY(0) rotate(0deg); } }
+.float, .tile, .portrait img, .grid-photos button, .thumbs.photos button, .cards .card, .ife-collage button, .tt {
+  animation: float var(--dur, 7s) ease-in-out var(--delay, 0s) infinite;
+  will-change: transform;
+}
+.tile:nth-child(1) { --delay: 0s; --tilt: -.6deg; }
+.tile:nth-child(2) { --delay: -1.4s; --dur: 8s; --tilt: .5deg; }
+.tile:nth-child(3) { --delay: -2.8s; --tilt: -.4deg; }
+.tile:nth-child(4) { --delay: -4.2s; --dur: 8.5s; --tilt: .6deg; }
+.tile:nth-child(5) { --delay: -5.6s; --tilt: -.5deg; }
+.portrait img { --dur: 9s; }
+.grid-photos button:nth-child(2n) { --delay: -2s; --dur: 8s; }
+.grid-photos button:nth-child(3n) { --delay: -4s; --dur: 9s; }
+.grid-photos button:nth-child(4n) { --delay: -1s; }
+.thumbs.photos button:nth-child(2) { --delay: -3s; }
+.ife-collage button:nth-child(2) { --delay: -2.5s; --dur: 8.5s; }
+.ife-collage button:nth-child(3) { --delay: -1.2s; --tilt: -.8deg; }
+.ife-collage button:nth-child(4) { --delay: -3.6s; --tilt: .8deg; }
+.ife-collage button:nth-child(5) { --delay: -5s; }
+.tt:nth-child(1) { --tilt: -1deg; }
+.tt:nth-child(2) { --delay: -2s; --dur: 8s; --tilt: .8deg; }
+.tt:nth-child(3) { --delay: -4s; --tilt: -.7deg; }
+.tt:nth-child(4) { --delay: -6s; --dur: 8.5s; --tilt: 1deg; }
+.cards .card { --dur: 9s; }
+.cards .card:nth-child(2) { --delay: -3s; }
+.cards .card:nth-child(3) { --delay: -6s; }
+.grid-photos { gap: 14px !important; }
+.grid-photos button { box-shadow: 0 16px 28px -18px rgba(22, 32, 46, .55); }
+.tile, .grid-photos button, .ife-collage button, .tt { transition: box-shadow .3s ease; }
+.tile:hover, .grid-photos button:hover, .ife-collage button:hover, .tt:hover { animation-play-state: paused; box-shadow: 0 26px 44px -20px rgba(22, 32, 46, .7); }
+@media (prefers-reduced-motion: reduce) {
+  .float, .tile, .portrait img, .grid-photos button, .thumbs.photos button, .cards .card, .ife-collage button, .tt { animation: none; }
+}
+@media (max-width: 820px) {
+  .channels { grid-template-columns: 1fr; }
+  .tts { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .ife-collage { grid-template-columns: repeat(3, 1fr); grid-template-rows: 190px 210px 190px; gap: 10px; }
+  .ife-collage .c-wide { grid-column: 1 / 4; }
+  .ife-collage .c-tall { grid-column: 1 / 4; grid-row: 2; }
+}
+.stories { display: grid; grid-template-columns: 1fr; gap: 72px; }
+.story { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 48px; align-items: center; }
+.stories .story:nth-child(even) .collage { order: 2; }
+.story-text .where { font-family: var(--mono); font-size: 12px; color: var(--indigo); letter-spacing: .06em; margin: 0 0 6px; }
+.story-text h3 { font-size: 26px; margin: 0 0 4px; }
+.story-text .when { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+.story-text p { margin: 0 0 10px; max-width: 52ch; }
+.collage { position: relative; width: 100%; aspect-ratio: 5 / 4; }
+.collage.n6 { aspect-ratio: 1 / 1; }
+.collage .ph { all: unset; position: absolute; cursor: zoom-in; background: #fff; padding: 7px; border-radius: 8px; box-shadow: 0 22px 40px -22px rgba(16, 24, 40, .65), 0 2px 6px rgba(16, 24, 40, .12);
+  animation: drift var(--dur, 8s) ease-in-out var(--delay, 0s) infinite; transform: rotate(var(--r, 0deg)); transition: box-shadow .3s ease; }
+.collage .ph img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 4px; }
+.collage .ph:hover, .collage .ph:focus-visible { z-index: 20 !important; animation-play-state: paused; box-shadow: 0 30px 50px -20px rgba(16, 24, 40, .75); }
+.collage .ph:focus-visible { outline: 2px solid var(--indigo); outline-offset: 3px; }
+@keyframes drift { 0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); } 50% { transform: translateY(-9px) rotate(calc(var(--r, 0deg) + .7deg)); } }
+.n3 .p1 { left: 0; top: 3%; width: 60%; --r: -3deg; z-index: 1; }
+.n3 .p2 { left: 42%; top: 0; width: 56%; --r: 3deg; z-index: 2; --delay: -2.5s; --dur: 9s; }
+.n3 .p3 { left: 15%; top: 43%; width: 57%; --r: -1.5deg; z-index: 3; --delay: -5s; }
+.n4 .p1 { left: 0; top: 2%; width: 54%; --r: -3deg; z-index: 1; }
+.n4 .p2 { left: 45%; top: 0; width: 53%; --r: 2.5deg; z-index: 2; --delay: -2s; --dur: 9s; }
+.n4 .p3 { left: 3%; top: 47%; width: 50%; --r: 2deg; z-index: 3; --delay: -4s; }
+.n4 .p4 { left: 45%; top: 45%; width: 53%; --r: -2.5deg; z-index: 4; --delay: -6s; --dur: 8.5s; }
+.n6 .p1 { left: 0; top: 0; width: 50%; --r: -3deg; z-index: 1; }
+.n6 .p2 { left: 47%; top: 3%; width: 46%; --r: 2.5deg; z-index: 2; --delay: -1.5s; --dur: 9s; }
+.n6 .p3 { left: 54%; top: 34%; width: 44%; --r: -2deg; z-index: 4; --delay: -3s; }
+.n6 .p4 { left: 2%; top: 33%; width: 50%; --r: 2deg; z-index: 3; --delay: -4.5s; --dur: 8.5s; }
+.n6 .p5 { left: 35%; top: 62%; width: 44%; --r: -1.5deg; z-index: 5; --delay: -6s; }
+.n6 .p6 { left: 0; top: 66%; width: 36%; --r: 3deg; z-index: 6; --delay: -2.2s; --dur: 9.5s; }
+.story-text .venture-head { margin-bottom: 14px; }
+.story-text .venture-head h3 { margin: 0; }
+.story-text .venture-head .where { margin-bottom: 2px; }
+.story-text .v-role { margin: 2px 0 0; color: var(--muted); font-size: 15px; }
+.collage.n5 { aspect-ratio: 1 / 1; }
+.collage .ph.sq img { aspect-ratio: 1 / 1; object-fit: contain; background: #fff; }
+.collage .ph.wide img { aspect-ratio: 16 / 9; }
+.n5 .p1 { left: 0; top: 2%; width: 62%; --r: -2.5deg; z-index: 1; }
+.n5 .p2 { left: 50%; top: 0; width: 48%; --r: 3deg; z-index: 2; --delay: -2s; --dur: 9s; }
+.n5 .p3 { left: 1%; top: 50%; width: 34%; --r: -3deg; z-index: 3; --delay: -3.5s; }
+.n5 .p4 { left: 33%; top: 56%; width: 34%; --r: 2deg; z-index: 4; --delay: -5s; --dur: 8.5s; }
+.n5 .p5 { left: 64%; top: 47%; width: 34%; --r: -2deg; z-index: 5; --delay: -1s; }
+.n2 .p1 { left: 0; top: 3%; width: 80%; --r: -2deg; z-index: 1; }
+.n2 .p2 { left: 19%; top: 43%; width: 80%; --r: 2deg; z-index: 2; --delay: -3.5s; --dur: 9s; }
+/* instagram profile mock */
+.collage.igc { aspect-ratio: auto; padding: 10px 0 30px; }
+.ig-phone { position: relative; z-index: 2; display: grid; gap: 10px; width: 66%; padding: 14px 12px 12px; background: #fff; color: #111; text-decoration: none; border-radius: 22px; border: 1px solid #e3e6ea;
+  box-shadow: 0 26px 48px -24px rgba(16, 24, 40, .65), 0 2px 6px rgba(16, 24, 40, .1); transform: rotate(-2deg); animation: drift 9s ease-in-out infinite; --r: -2deg; }
+.ig-phone:hover { animation-play-state: paused; }
+.ig-top { font-weight: 600; font-size: 14px; text-align: center; }
+.ig-head { display: flex; align-items: center; gap: 14px; }
+.ig-av { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 1px solid #e3e6ea; }
+.ig-stats { display: flex; gap: 18px; font-size: 12px; color: #444; }
+.ig-stats span { display: grid; text-align: center; line-height: 1.2; }
+.ig-stats b { font-size: 15px; color: #111; }
+.ig-bio { font-size: 12px; line-height: 1.4; color: #222; }
+.ig-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin: 2px -12px -12px; border-radius: 0 0 22px 22px; overflow: hidden; }
+.ig-grid img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
+.igc .ph img { aspect-ratio: 4 / 5; }
+.igc .q1 { right: 0; top: 4%; width: 40%; --r: 4deg; z-index: 3; --delay: -2s; }
+.igc .q2 { right: 6%; top: 52%; width: 38%; --r: -3deg; z-index: 4; --delay: -5s; --dur: 9.5s; }
+@media (prefers-reduced-motion: reduce) { .ig-phone { animation: none; } }
+/* education + certificates in collages */
+.collage.edu { aspect-ratio: 5 / 4; }
+.edu .p1 { left: 0; top: 2%; width: 92%; --r: -1.5deg; z-index: 1; }
+.edu .p2 { left: 2%; top: 50%; width: 47%; --r: 2.5deg; z-index: 2; --delay: -3s; --dur: 9s; }
+.edu .p3 { left: 51%; top: 55%; width: 47%; --r: -2deg; z-index: 3; --delay: -5.5s; }
+.collage .ph.cert img { aspect-ratio: 1000 / 707; object-fit: contain; background: #fff; }
+.thumbs .cert img { object-fit: contain; background: #fff; }
+#education .chips { margin-top: 28px; }
+.pub .thumbs.photos button { width: 190px; height: 130px; }
+.pub .thumbs.photos button.cert { width: 155px; }
+@media (max-width: 480px) { .pub .thumbs.photos button, .pub .thumbs.photos button.cert { width: calc(50% - 5px); height: 110px; } }
+/* language certificates */
+.lang-h { margin: 40px 0 14px; }
+.langs { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 8px; }
+.lang { display: grid; grid-template-columns: 110px 1fr; gap: 20px; align-items: center; padding: 20px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; }
+.lang-doc { all: unset; cursor: zoom-in; background: #fff; padding: 5px; border-radius: 6px; box-shadow: 0 18px 30px -16px rgba(0, 0, 0, .6); --r: -3deg; transform: rotate(var(--r)); animation: drift 8s ease-in-out infinite; }
+.lang:nth-child(2) .lang-doc { --r: 3deg; --delay: -3s; animation-delay: -3s; }
+.lang-doc:hover { animation-play-state: paused; }
+.lang-doc:focus-visible { outline: 2px solid var(--indigo); outline-offset: 3px; }
+.lang-doc img { width: 100%; aspect-ratio: 1000 / 1414; object-fit: cover; border-radius: 3px; }
+.l-where { font-family: var(--mono); font-size: 12px; letter-spacing: .06em; color: var(--indigo); margin: 0; }
+.lang .big { font-family: var(--display); font-weight: 600; font-size: 46px; line-height: 1; margin: 6px 0 10px; font-variant-numeric: tabular-nums; }
+.lang .big span { font-family: var(--mono); font-size: 12.5px; font-weight: 500; color: var(--indigo); border: 1px solid var(--line); border-radius: 999px; padding: 3px 9px; margin-left: 10px; vertical-align: 10px; }
+.bands { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 14px; color: var(--muted); }
+.bands b { color: var(--ink); font-variant-numeric: tabular-nums; }
+.l-text { margin: 0; font-size: 14.5px; color: var(--muted); }
+.l-meta { margin: 10px 0 0; font-size: 13px; color: var(--muted); }
+@media (max-width: 820px) { .langs { grid-template-columns: 1fr; } }
+@media (max-width: 480px) { .lang { grid-template-columns: 84px 1fr; gap: 14px; padding: 16px; } .lang .big { font-size: 38px; } }
+@media (prefers-reduced-motion: reduce) { .lang-doc { animation: none; } }
+/* sustainability + data accents */
+.eyebrow, .where, .online .where, .l-where, .timeline time, .pub .num, .album .meta, .ch-handle { color: var(--data); }
+.hero { position: relative; overflow: hidden; }
+.hero::before { content: ""; position: absolute; inset: 0; pointer-events: none;
+  background-image: radial-gradient(var(--dots) 1px, transparent 1.4px); background-size: 22px 22px;
+  -webkit-mask-image: radial-gradient(ellipse 75% 85% at 28% 40%, #000 25%, transparent 72%); mask-image: radial-gradient(ellipse 75% 85% at 28% 40%, #000 25%, transparent 72%); }
+.hero .wrap { position: relative; }
+.btn.primary { background: var(--indigo); border-color: var(--indigo); color: var(--btn-ink); }
+.label h2::after { content: ""; display: block; width: 36px; height: 3px; border-radius: 2px; margin-top: 12px; background: var(--indigo); }
+/* CV viewer */
+button.btn { font: inherit; font-size: 15px; font-weight: 500; background: transparent; cursor: pointer; }
+.cv-dlg { width: min(94vw, 880px); max-width: none; max-height: 92vh; overflow: hidden; }
+.cv-dlg[open] { display: flex; flex-direction: column; }
+.cv-bar { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 16px; border-bottom: 1px solid var(--line); font-size: 15px; }
+.cv-actions { display: flex; align-items: center; gap: 14px; font-size: 14px; }
+.cv-pages { overflow: auto; background: #dfe8ec; padding: 16px; display: grid; gap: 14px; }
+@media (max-width: 480px) { .cv-pages { padding: 8px; } }
+.cv-pages img { width: 100%; max-height: none; margin: 0; box-shadow: 0 6px 18px -8px rgba(0, 0, 0, .35); background: #fff; }
+.collage .ph img, .tile img, .tt img { filter: saturate(1.08) contrast(1.03); }
+/* threads posts */
+.collage.posts { aspect-ratio: auto; height: 610px; }
+.post { position: absolute; display: grid; gap: 10px; width: 84%; padding: 18px 20px; background: #fff; color: #101418; text-decoration: none; border-radius: 16px; border: 1px solid #e3e6ea; box-shadow: 0 22px 40px -22px rgba(16, 24, 40, .6), 0 2px 6px rgba(16, 24, 40, .08);
+  animation: drift var(--dur, 8s) ease-in-out var(--delay, 0s) infinite; transform: rotate(var(--r, 0deg)); }
+.post:hover { z-index: 20 !important; animation-play-state: paused; }
+.post-head { display: flex; gap: 10px; align-items: center; font-size: 14px; }
+.post-head img { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; }
+.post-head > span { display: grid; line-height: 1.25; }
+.post-date { color: #6b7280; font-size: 12.5px; }
+.post-body { font-size: 15px; line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden; }
+.post-stats { font-size: 13px; color: #6b7280; font-variant-numeric: tabular-nums; }
+.post.p1 { left: 0; top: 0; --r: -2deg; z-index: 1; }
+.post.p2 { left: 15%; top: 31%; --r: 2deg; z-index: 2; --delay: -3s; --dur: 9s; }
+.post.p3 { left: 3%; top: 62%; --r: -1deg; z-index: 3; --delay: -5.5s; width: 80%; }
+.threads-story { margin: 26px 0 8px; }
+@media (prefers-reduced-motion: reduce) { .collage .ph, .post { animation: none; } }
+@media (max-width: 820px) {
+  .story { grid-template-columns: 1fr; gap: 22px; }
+  .stories .story:nth-child(even) .collage { order: 0; }
+  .stories { gap: 56px; }
+  .collage.posts { height: 600px; }
+  .post { width: 86%; }
+  .post.p2 { left: 12%; top: 33%; }
+  .post.p3 { left: 2%; top: 66%; width: 86%; }
+}
+@media (max-width: 820px) {
+  .hero .wrap { grid-template-columns: 1fr; gap: 28px; padding-block: 40px; }
+  .portrait { justify-self: start; max-width: 260px; }
+  section.block > .wrap { grid-template-columns: 1fr; gap: 18px; padding-block: 40px; }
+  .label h2 { position: static; }
+  nav ul { gap: 4px 14px; }
+}
+@media (max-width: 640px) {
+  .grid-photos.n3, .grid-photos.n4, .grid-photos.n6 { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 130px; }
+  .grid-photos.n3 button:first-child, .grid-photos.n4 button:first-child { grid-column: span 2; grid-row: span 2; }
+  .online li { grid-template-columns: 1fr; gap: 2px; }
+}
+@media (max-width: 480px) {
+  .timeline li { grid-template-columns: 1fr; gap: 2px; }
+  .pub { grid-template-columns: 1fr; }
+  .contact dl { grid-template-columns: 1fr; gap: 2px; }
+  .contact dd { margin-bottom: 10px; }
+}
+</style>
+</head>
+<body>
+
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#about">Nguyen Nang Thuy Nguyen</a>
+    <nav aria-label="Sections">
+      <ul>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#ventures">Ventures</a></li>
+        <li><a href="#content">Content</a></li>
+        <li><a href="#global">Global</a></li>
+        <li><a href="#gallery">Moments</a></li>
+        <li><a href="#awards">Awards</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="about">
+  <div class="wrap">
+    <div>
+      <h1>Nguyen Nang Thuy Nguyen</h1>
+      <p class="tagline">I study how sustainability and AI shape what people buy and how businesses compete in Vietnam.</p>
+      <p class="bio">Welcome! I do research on sustainability, digital technology and consumer behavior at the FTU Research Lab, Foreign Trade University. Our team's study on brand transparency won Second Prize at Vietnam's national Science and Technology Award for University Students and was published in JABES. I have presented work on green finance and AI at ICFAA 2026, studied at Kansai University in Osaka and at Harbin Institute of Technology, co-founded the IELTS center IELTS For Everyone, and I am now building Orango, an AI teaching assistant for English classes.</p>
+      <div class="links">
+        <a class="btn primary" href="mailto:nguyennnt0703.work@gmail.com">Email me</a>
+        <button type="button" class="btn" id="open-cv">View CV</button>
+      </div>
+      <ul class="social" aria-label="Profiles">
+        <li><a href="https://www.linkedin.com/in/nguy%C3%AAn-thu%E1%BB%B7-289301394/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://orcid.org/0009-0003-2528-8995" target="_blank" rel="noopener">ORCID</a></li>
+        <li><a href="https://www.threads.com/@nguyenbup_" target="_blank" rel="noopener">Threads</a></li>
+        <li><a href="https://www.tiktok.com/@nguyenbup_" target="_blank" rel="noopener">TikTok</a></li>
+      </ul>
+    </div>
+    <figure class="portrait"><img src="portrait.jpg" alt="Nguyen Nang Thuy Nguyen at Harbin Institute of Technology"><figcaption>Harbin Institute of Technology, July 2026</figcaption></figure>
+  </div>
+</section>
+
+<section class="highlights" aria-label="Highlights">
+  <div class="wrap"><div class="tiles"><a class="tile" href="#album-nckh"><img src="nckh_1.jpg" alt="" loading="lazy"><span>Second Prize, national student research award</span></a><a class="tile" href="#album-kansai"><img src="kansai_4.jpg" alt="" loading="lazy"><span>Exchange semester in Osaka</span></a><a class="tile" href="#album-hit"><img src="hit_1.jpg" alt="" loading="lazy"><span>HIT Global Summer School, Harbin</span></a><a class="tile" href="#album-denmark"><img src="denmark_1.jpg" alt="" loading="lazy"><span>Food waste debate, Embassy of Denmark</span></a><a class="tile" href="#album-camp"><img src="camp_2.jpg" alt="" loading="lazy"><span>Change-maker Impact Camp</span></a></div></div>
+</section>
+
+<section class="block" id="education">
+  <div class="wrap">
+    <div class="label"><h2>Education</h2><p>Where I study</p></div>
+    <div class="content">
+      <div class="stories">
+        <article class="story">
+          <div class="collage edu"><button type="button" class="ph p1 wide" data-full="ftu_opening.jpg" data-cap="Opening ceremony of the 2026–2027 academic year, Foreign Trade University, 5 September 2026"><img src="ftu_opening.jpg" alt="Opening ceremony of the 2026–2027 academic year, Foreign Trade University, 5 September 2026" loading="lazy"></button><button type="button" class="ph p2 cert" data-full="vbiz_2023.jpg" data-cap="Second Prize, V-Business Plan Competition 2023 (Waseda University, JICA VJCC Project and FTU)"><img src="vbiz_2023.jpg" alt="Second Prize, V-Business Plan Competition 2023 (Waseda University, JICA VJCC Project and FTU)" loading="lazy"></button><button type="button" class="ph p3 cert" data-full="xculture_certificate.jpg" data-cap="X-Culture certificate, global virtual team consulting project"><img src="xculture_certificate.jpg" alt="X-Culture certificate, global virtual team consulting project" loading="lazy"></button></div>
+          <div class="story-text">
+            <p class="where">FOREIGN TRADE UNIVERSITY · HANOI</p>
+            <h3>Bachelor’s in Japanese-style International Business</h3>
+            <p class="when">Vietnam-Japan College of Business and Innovation (VJCBI) · Sep 2022 – Mar 2027</p>
+            <p>Foreign Trade University (FTU) is one of Vietnam’s leading universities for economics, business and international trade. I study at its Vietnam-Japan College of Business and Innovation (VJCBI, formerly VJCC), where international business is taught through a Japanese lens.</p>
+            <p>We learn Japanese management ideas such as Kaizen, Just-in-Time and Monozukuri, and many of our classes are taught by Japanese lecturers. In the core V-BIZ 1, 2 and 3 courses we analyze real companies with structured frameworks, solve business cases and build business plans, and the X-Culture project puts us in global virtual teams that consult for real firms. Alongside the program I study Japanese (JLPT N4).</p>
+          </div>
+        </article>
+      </div>
+      <ul class="chips" aria-label="Selected courses">
+        <li>Japanese Style Production System</li><li>Japanese Economy and Business</li><li>Japanese-style HRM</li><li>V-BIZ Business Plan</li><li>Supply Chain Management</li><li>Business Analytics</li>
+      </ul>
+      <h3 class="lang-h">Language certificates</h3>
+      <div class="langs">
+        <div class="lang">
+          <button type="button" class="lang-doc" data-full="ielts_trf.jpg" data-cap="IELTS Academic Test Report Form, January 2026 (ID numbers and date of birth hidden)"><img src="ielts_trf.jpg" alt="IELTS Academic Test Report Form" loading="lazy"></button>
+          <div>
+            <p class="l-where">ENGLISH · IELTS ACADEMIC</p>
+            <p class="big">7.5<span>CEFR C1</span></p>
+            <ul class="bands"><li>Listening <b>8.5</b></li><li>Reading <b>7.5</b></li><li>Writing <b>7.0</b></li><li>Speaking <b>7.0</b></li></ul>
+            <p class="l-meta">British Council · January 2026</p>
+          </div>
+        </div>
+        <div class="lang">
+          <button type="button" class="lang-doc" data-full="jlpt_n4.jpg" data-cap="JLPT N4 certificate, December 2024 test (date of birth and certificate numbers hidden)"><img src="jlpt_n4.jpg" alt="JLPT N4 certificate" loading="lazy"></button>
+          <div>
+            <p class="l-where">JAPANESE · JLPT</p>
+            <p class="big">N4</p>
+            <p class="l-text">Japanese-Language Proficiency Test, passed in December 2024.</p>
+            <p class="l-meta">The Japan Foundation and JEES</p>
+          </div>
+        </div>
+      </div>
+      <ul class="online">
+        <li><span class="where">OSAKA · EXCHANGE</span><div><strong>Kansai University</strong>, exchange semester · Apr–Sep 2025<p>One of two students nominated by FTU. <a href="#album-kansai">See photos →</a></p></div></li>
+        <li><span class="where">HARBIN · SUMMER</span><div><strong>Harbin Institute of Technology</strong>, Global Summer School · Jul 2026<p><a href="#album-hit">See photos →</a></p></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="research">
+  <div class="wrap">
+    <div class="label"><h2>Research</h2><p>Publications, conference papers and ongoing projects</p></div>
+    <div class="content">
+      <h3>Summary of research interests</h3>
+      <p class="prose">My research looks at how sustainability and digital technology change the way firms and consumers make decisions in emerging markets, especially Vietnam. On the consumer side, I study how brand transparency and corporate digital responsibility shape motivation, trust and sustainable purchase intention. On the firm side, I study how green banking policy and AI adoption affect bank performance, and how Vietnamese SMEs can turn AI and sustainability knowledge into competitive advantage. I mainly use quantitative methods and combine them with interviews when building a model.</p>
+      <ul class="chips" aria-label="Methods">
+        <li>PLS-SEM</li><li>Artificial neural networks</li><li>PROCESS Macro</li><li>fsQCA</li><li>Panel regression</li><li>Experiments</li><li>Survey design</li><li>Thematic coding</li>
+      </ul>
+
+      <ol class="pubs">
+        <li class="pub">
+          <div class="num">[1]</div>
+          <div>
+            <p class="byline">Dinh, V. H., Vu, T. T. L., Le, A. Q., &amp; <b>Nguyen, N. T. N.</b> (2025)</p>
+            <p class="title">“Tính minh bạch thương hiệu và hành vi mua sản phẩm bền vững: Góc nhìn từ động lực xanh và giá trị cảm xúc” <span class="tr">[Brand transparency and sustainable purchasing behavior: Perspectives from green motivation and emotional value]</span></p>
+            <span class="status pub-ok">Published · Journal of Asian Business and Economic Studies (JABES), 36(1), 90–106</span>
+            <p class="doi">DOI: <a href="https://doi.org/10.24311/jabes/2025.36.1.08" target="_blank" rel="noopener">10.24311/jabes/2025.36.1.08</a></p>
+            <p class="abs">Using 357 consumer responses from across Vietnam and PLS-SEM, the study shows that brand transparency raises consumers’ intention to buy sustainable products, their green extrinsic motivation and the emotional value they feel. Green extrinsic motivation carries part of the effect of transparency on purchase intention, while emotional value does not act as a significant mediator. The wider award-winning project behind the paper also used ANN, PROCESS Macro and fsQCA.</p>
+            <p class="meta">Second Prize, Ministerial-Level Science and Technology Award for University Students 2025 · First Prize, FTU Student Research Contest 2025 · Semi-final, Eureka Scientific Research Award 2025</p>
+            <div class="thumbs photos">
+              <button type="button" data-full="nckh_1.jpg" data-cap="Award ceremony, Science and Technology Award for University Students 2025, Nha Trang University"><img src="nckh_1.jpg" alt="Team at the award ceremony in Nha Trang" loading="lazy"></button>
+              <button type="button" data-full="nckh_2.jpg" data-cap="Final round in Nha Trang, with our supervisor Dr. Dinh Van Hoang"><img src="nckh_2.jpg" alt="Team with supervisor at the final round" loading="lazy"></button>
+              <button type="button" class="cert" data-full="nckh_cap_bo_giay_chung_nhan.jpg" data-cap="Certificate, Second Prize, Ministerial-Level Science and Technology Award for University Students 2025"><img src="nckh_cap_bo_giay_chung_nhan.jpg" alt="Second Prize certificate" loading="lazy"></button>
+              <button type="button" class="cert" data-full="nckh_cap_truong_giay_khen.jpg" data-cap="First Prize, FTU Student Research Contest 2025"><img src="nckh_cap_truong_giay_khen.jpg" alt="FTU First Prize certificate" loading="lazy"></button>
+            </div>
+          </div>
+        </li>
+        <li class="pub">
+          <div class="num">[2]</div>
+          <div>
+            <p class="byline">Nguyen, H. M., Dinh, V. H., Vu, T. T. L., &amp; Nguyen, N. T. N.</p>
+            <p class="title">“Navigating Green Skepticism: From Digital Sustainability Transparency to Green Brand Advocacy”</p>
+            <span class="status review">Under review · Journal of Brand Management</span>
+          </div>
+        </li>
+        <li class="pub">
+          <div class="num">[3]</div>
+          <div>
+            <p class="byline">Nguyen, T. Q., Le, T. H. T., <b>Nguyen, N. T. N.</b>, Doan, V. T. V., &amp; Mai, T. L. T.</p>
+            <p class="title">“The Impact of Green Credit Policy and Artificial Intelligence Transformation on the Operations of Vietnamese Commercial Banks”</p>
+            <span class="status talk">Presented · ICFAA 2026, National Economics University, Hanoi, 15 Oct 2026</span>
+            <p class="abs">With an unbalanced panel of 19 Vietnamese commercial banks (2015–2024) and a random-effects model with year fixed effects, the study tests how AI, fintech and green banking policies relate to bank profitability. AI is linked to higher ROE, while the first green banking decision (1408/QĐ-NHNN) is linked to lower returns and the later, broader decision (1604/QĐ-NHNN) to higher ROE and ROA, which suggests that implementation matters more than formal adoption. I collected the panel data, ran the regressions, wrote the results section and presented the paper.</p>
+            <div class="thumbs">
+              <button type="button" data-full="icfaa_2026_presentation.jpg" data-cap="Certificate of Presentation, ICFAA 2026"><img src="icfaa_2026_presentation.jpg" alt="ICFAA 2026 certificate of presentation" loading="lazy"></button>
+            </div>
+          </div>
+        </li>
+        <li class="pub">
+          <div class="num">[4]</div>
+          <div>
+            <p class="byline">Research Lab, Foreign Trade University · Principal Investigator: Dr. Dinh Van Hoang</p>
+            <p class="title">“Corporate Digital Responsibility and Consumer Responses” (working title)</p>
+            <span class="status ongoing">Ongoing · since July 2026</span>
+            <p class="abs">A 2×2 between-subjects experiment on how firms' practices in digital environments shape consumer responses. I collected and cleaned 600 responses from Gen Z and Gen X participants and test mediation and cohort–treatment interactions with PROCESS Models 4 and 8 and two-way ANOVA.</p>
+          </div>
+        </li>
+      </ol>
+
+      <div class="future">
+        <h3>Next direction</h3>
+        <p>For my master's research I plan to study AI-enabled sustainable knowledge capability in Vietnamese SMEs: whether firms that acquire and apply sustainability knowledge with AI tools gain a competitive advantage, through ambidextrous innovation and with the support of transformational leadership.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="ventures">
+  <div class="wrap">
+    <div class="label"><h2>Ventures</h2><p>Projects I started and keep building</p></div>
+    <div class="content">
+      <div class="stories">
+        <article class="story">
+          <div class="collage n5"><button type="button" class="ph p1" data-full="ife_comm_1.jpg" data-cap="IFE learner meetup, 2023"><img src="ife_comm_1.jpg" alt="IFE learner meetup, 2023" loading="lazy"></button><button type="button" class="ph p2" data-full="ife_comm_2.jpg" data-cap="IFE community gathering"><img src="ife_comm_2.jpg" alt="IFE community gathering" loading="lazy" style="object-position: 50% 80%"></button><button type="button" class="ph p3 sq" data-full="ife_score_1c.jpg" data-cap="IFE learner result"><img src="ife_score_1c.jpg" alt="IFE learner result" loading="lazy"></button><button type="button" class="ph p4 sq" data-full="ife_score_2c.jpg" data-cap="IFE learner result"><img src="ife_score_2c.jpg" alt="IFE learner result" loading="lazy"></button><button type="button" class="ph p5 sq" data-full="ife_score_3c.jpg" data-cap="IFE learner result"><img src="ife_score_3c.jpg" alt="IFE learner result" loading="lazy"></button></div>
+          <div class="story-text">
+            <div class="venture-head">
+              <div class="logo"><img src="ife.png" alt="IELTS For Everyone logo"></div>
+              <div><p class="where">EDUCATION · SINCE DEC 2023</p><h3>IELTS For Everyone (IFE)</h3><p class="v-role">Co-founder, IELTS teacher and Marketing Manager</p></div>
+            </div>
+            <p>I started IFE in my second year at FTU and have run it alongside my studies ever since. I teach 100+ learners a year, have written 30+ lesson plans using content-based (CLIL) methods, and keep a community of learners together through offline meetups and our Instagram <a href="https://www.instagram.com/ieltsforeveryone.ife/" target="_blank" rel="noopener">@ieltsforeveryone.ife</a>. Our learners reach an average band of 6.5, and many go well beyond it.</p>
+          </div>
+        </article>
+        <article class="story ig-story">
+          <div class="collage igc"><a class="ig-phone" href="https://www.instagram.com/ieltsforeveryone.ife/" target="_blank" rel="noopener" aria-label="IFE on Instagram"><span class="ig-top">ieltsforeveryone.ife</span><span class="ig-head"><img class="ig-av" src="ig_avatar.jpg" alt=""><span class="ig-stats"><span><b>28</b>posts</span><span><b>265</b>followers</span></span></span><span class="ig-bio">Hi! Bonjour! こんにちは! Chúng mình là nhóm GV với mong muốn đem IELTS tới tất cả mọi người</span><span class="ig-grid"><img src="ig_1.jpg" alt="" loading="lazy"><img src="ig_2.jpg" alt="" loading="lazy"><img src="ig_3.jpg" alt="" loading="lazy"><img src="ig_4.jpg" alt="" loading="lazy"><img src="ig_5.jpg" alt="" loading="lazy"><img src="ig_6.jpg" alt="" loading="lazy"><img src="ig_7.jpg" alt="" loading="lazy"><img src="ig_8.jpg" alt="" loading="lazy"><img src="ig_9.jpg" alt="" loading="lazy"></span></a><button type="button" class="ph q1" data-full="ig_4.jpg" data-cap="IFE post: a culture debate on artistic freedom and heritage"><img src="ig_4.jpg" alt="IFE Instagram post, Come My Way" loading="lazy"></button><button type="button" class="ph q2" data-full="ig_7.jpg" data-cap="IFE post: The Cost of Clean"><img src="ig_7.jpg" alt="IFE Instagram post, The Cost of Clean" loading="lazy"></button></div>
+          <div class="story-text">
+            <p class="where">INSTAGRAM · MARKETING MANAGER</p>
+            <h3>Building IFE on Instagram</h3>
+            <p class="when">@ieltsforeveryone.ife</p>
+            <p>I built IFE's Instagram from the ground up and run it as the team's Marketing Manager. The feed mixes exam skills, like Writing Task 1 and the mistakes that cost learners points, with topic posts on culture, sustainability and public health that learners can reuse as speaking and writing material. It is also where we open enrolment for each new class.</p>
+            <p><a href="https://www.instagram.com/ieltsforeveryone.ife/" target="_blank" rel="noopener">See IFE on Instagram →</a></p>
+          </div>
+        </article>
+        <article class="story">
+          <div class="collage n2"><button type="button" class="ph p1 wide" data-full="orango_1.jpg" data-cap="Orango, cover slide"><img src="orango_1.jpg" alt="Orango, cover slide" loading="lazy"></button><button type="button" class="ph p2 wide" data-full="orango_2.jpg" data-cap="Orango, our solution"><img src="orango_2.jpg" alt="Orango, our solution" loading="lazy"></button></div>
+          <div class="story-text">
+            <div class="venture-head">
+              <div class="logo mono">OR</div>
+              <div><p class="where">EDTECH STARTUP · 2026</p><h3>Orango</h3><p class="v-role">Founder, research and product development</p></div>
+            </div>
+            <p>Students now use ChatGPT and other AI tools for almost every IELTS task, while teachers with 20 or more students per class cannot see who actually understands the lesson. Orango is an AI teaching assistant built into a learning management system for English centers and schools. It gives students hints instead of ready-made answers, follows each center's own curriculum, flags repeated mistakes and how much each student relies on AI, and sends clear progress reports to teachers and parents. I lead a team of four. Orango was named one of the Top 10 Outstanding Projects at the TEC Go Startup Program, Foreign Trade University (2026).</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="content">
+  <div class="wrap">
+    <div class="label"><h2>Content &amp; Community</h2><p>Where I share what I learn</p></div>
+    <div class="content">
+      <div class="channels">
+        <a class="channel" href="https://www.tiktok.com/@nguyenbup_" target="_blank" rel="noopener">
+          <span class="ch-name">TikTok · Búp</span>
+          <span class="ch-handle">@nguyenbup_</span>
+          <span class="ch-stats"><b>12.8K</b> followers · <b>161K</b> likes</span>
+        </a>
+        <a class="channel" href="https://www.threads.com/@nguyenbup_" target="_blank" rel="noopener">
+          <span class="ch-name">Threads · Nguyên Taki</span>
+          <span class="ch-handle">@nguyenbup_</span>
+          <span class="ch-stats"><b>3.8K</b> followers</span>
+        </a>
+        <a class="channel" href="https://www.instagram.com/ieltsforeveryone.ife/" target="_blank" rel="noopener">
+          <span class="ch-name">Instagram · IFE</span>
+          <span class="ch-handle">@ieltsforeveryone.ife</span>
+          <span class="ch-stats">Built and run as Marketing Manager</span>
+        </a>
+      </div>
+      <p class="prose">For three years I have made short videos in Vietnamese for university students about choosing a major, motivation and growing up, under the name Búp.</p>
+      <article class="story threads-story">
+        <div class="collage posts"><a class="post p1" href="https://www.threads.com/@nguyenbup_" target="_blank" rel="noopener"><span class="post-head"><img src="threads_avatar.jpg" alt=""><span><b>nguyenbup_</b><span class="post-date">Pinned · 29/08/2026</span></span></span><span class="post-body">Hi mng, mình là Búp. … Dưới làn sóng đi du học của đông đảo các bạn hiện nay, thì một số vấn đề mình có nhìn thấy: áp lực slot ngày một cạnh tranh, trung tâm/mentor xuất hiện nhiều nhưng không phải đâu cũng có giá hợp lí, cộng đồng chia sẻ ít. Nên mình đã quyết định sẽ tạo ra series này.</span><span class="post-stats">♥ 4.5K &nbsp; ◯ 57 &nbsp; ⟲ 656</span></a><a class="post p2" href="https://www.threads.com/@nguyenbup_" target="_blank" rel="noopener"><span class="post-head"><img src="threads_avatar.jpg" alt=""><span><b>nguyenbup_</b><span class="post-date">07/10/2026</span></span></span><span class="post-body">Why school? Why you? Why us? Rốt cuộc, bạn là ai? Sao chúng tôi chọn bạn? Các học bổng, các trường xoáy rất kỹ vào những câu hỏi tưởng chừng như đơn giản, nhưng với nhiều người mất tới hàng chục năm để biết.</span><span class="post-stats">♥ 712 &nbsp; ◯ 8 &nbsp; ⟲ 81</span></a><a class="post p3" href="https://www.threads.com/@nguyenbup_" target="_blank" rel="noopener"><span class="post-head"><img src="threads_avatar.jpg" alt=""><span><b>nguyenbup_</b><span class="post-date">19/10/2026</span></span></span><span class="post-body">I mean, how should I know EVERYTHING? I’m just a 22-year-old boy, wandering along my career path every day, searching for and creating opportunities with my LIMITED knowledge and skill set…</span><span class="post-stats">♥ 37 &nbsp; ◯ 3 &nbsp; ⟲ 3</span></a></div>
+        <div class="story-text">
+          <p class="where">THREADS · @nguyenbup_</p>
+          <h3>The “300+ Days” series</h3>
+          <p class="when">Since August 2026</p>
+          <p>A public diary of my scholarship journey. I share how I search for programs, prepare applications and handle interviews, so that other students do not have to search alone. The pinned post that started the series reached 4.5K likes and was reposted more than 650 times.</p>
+          <p><a href="https://www.threads.com/@nguyenbup_" target="_blank" rel="noopener">Read the series on Threads →</a></p>
+        </div>
+      </article>
+      <p class="sub">Most watched on TikTok</p>
+      <div class="tts"><a class="tt" href="https://www.tiktok.com/@nguyenbup_/video/7380713238276738322" target="_blank" rel="noopener"><img src="tt_7380713238276738322.jpg" alt="TikTok video: Nét vẽ nguệch ngoạc" loading="lazy"><span class="views">▶ 155.8K</span><span class="tt-title">Nét vẽ nguệch ngoạc</span></a><a class="tt" href="https://www.tiktok.com/@nguyenbup_/video/7341754272008211719" target="_blank" rel="noopener"><img src="tt_7341754272008211719.jpg" alt="TikTok video: Tớ đã chọn sai ngành" loading="lazy"><span class="views">▶ 136.4K</span><span class="tt-title">Tớ đã chọn sai ngành</span></a><a class="tt" href="https://www.tiktok.com/@nguyenbup_/video/7365118686903930130" target="_blank" rel="noopener"><img src="tt_7365118686903930130.jpg" alt="TikTok video: Tớ là một chú cá ngựa" loading="lazy"><span class="views">▶ 134.5K</span><span class="tt-title">Tớ là một chú cá ngựa</span></a><a class="tt" href="https://www.tiktok.com/@nguyenbup_/video/7335073599159651592" target="_blank" rel="noopener"><img src="tt_7335073599159651592.jpg" alt="TikTok video: Động lực “ảo”" loading="lazy"><span class="views">▶ 83.4K</span><span class="tt-title">Động lực “ảo”</span></a></div>
+      <p class="asof">Figures as of October 2026.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="global">
+  <div class="wrap">
+    <div class="label"><h2>Global Experience</h2><p>Exchanges, summer schools and international programs</p></div>
+    <div class="content">
+      <div class="stories">
+        <article class="story" id="album-kansai">
+          <div class="collage n6"><button type="button" class="ph p1" data-full="kansai_4.jpg" data-cap="Hanami with exchange students"><img src="kansai_4.jpg" alt="Hanami with exchange students" loading="lazy"></button><button type="button" class="ph p2" data-full="kansai_1.jpg" data-cap="Certificate of completion, Kansai University"><img src="kansai_1.jpg" alt="Certificate of completion, Kansai University" loading="lazy"></button><button type="button" class="ph p3" data-full="kansai_2.jpg" data-cap="Cherry blossom picnic"><img src="kansai_2.jpg" alt="Cherry blossom picnic" loading="lazy"></button><button type="button" class="ph p4" data-full="kansai_5.jpg" data-cap="Group work in class"><img src="kansai_5.jpg" alt="Group work in class" loading="lazy"></button><button type="button" class="ph p5" data-full="kansai_3.jpg" data-cap="Cultural exchange event"><img src="kansai_3.jpg" alt="Cultural exchange event" loading="lazy"></button><button type="button" class="ph p6" data-full="kansai_6.jpg" data-cap="Completion ceremony"><img src="kansai_6.jpg" alt="Completion ceremony" loading="lazy"></button></div>
+          <div class="story-text">
+            <p class="where">JAPAN · OSAKA</p>
+            <h3>Kansai University</h3>
+            <p class="when">Exchange semester · Apr–Sep 2025</p>
+            <p>Yasuhara Memorial Foundation scholar, one of two students nominated by FTU. S or A grades in 90% of courses, including Business for SDGs and Sustainability: An Interdisciplinary Approach. Outside class there were cherry blossom picnics, cultural exchange events and group work with students from Japan and around the world.</p>
+          </div>
+        </article>
+        <article class="story" id="album-hit">
+          <div class="collage n4"><button type="button" class="ph p1" data-full="hit_1.jpg" data-cap="Closing ceremony, HIT Global Summer School 2026"><img src="hit_1.jpg" alt="Closing ceremony, HIT Global Summer School 2026" loading="lazy" style="object-position: 50% 30%"></button><button type="button" class="ph p2" data-full="hit_2.jpg" data-cap="Harbin Institute of Technology"><img src="hit_2.jpg" alt="Harbin Institute of Technology" loading="lazy"></button><button type="button" class="ph p3" data-full="hit_3.jpg" data-cap="HIT space museum"><img src="hit_3.jpg" alt="HIT space museum" loading="lazy"></button><button type="button" class="ph p4" data-full="hit_4.jpg" data-cap="Opening day in the main auditorium"><img src="hit_4.jpg" alt="Opening day in the main auditorium" loading="lazy" style="object-position: 50% 72%"></button></div>
+          <div class="story-text">
+            <p class="where">CHINA · HARBIN</p>
+            <h3>Harbin Institute of Technology</h3>
+            <p class="when">Global Summer School · 11–19 Jul 2026</p>
+            <p>The only student nominated by FTU for the program on Digital Economy and Intelligent Decision, with scores of 93–94/100 in courses on information systems research in the Gen AI era and managerial decision-making. The nine days also brought a visit to the HIT space museum and new friends from many countries.</p>
+          </div>
+        </article>
+        <article class="story" id="album-camp">
+          <div class="collage n3"><button type="button" class="ph p1" data-full="camp_1.jpg" data-cap="All participants of the camp"><img src="camp_1.jpg" alt="All participants of the camp" loading="lazy"></button><button type="button" class="ph p2" data-full="camp_2.jpg" data-cap="Pitching our business model canvas"><img src="camp_2.jpg" alt="Pitching our business model canvas" loading="lazy"></button><button type="button" class="ph p3" data-full="camp_3.jpg" data-cap="My team and our canvas"><img src="camp_3.jpg" alt="My team and our canvas" loading="lazy"></button></div>
+          <div class="story-text">
+            <p class="where">SINGAPORE · VIETNAM</p>
+            <h3>Change-maker Impact Camp &amp; NTU i-SEA</h3>
+            <p class="when">Dec 2024 · next: Nov–Dec 2026 <span class="tag-upcoming">UPCOMING</span></p>
+            <p>A one-day camp with 60 students from FTU and Singapore on social entrepreneurship, ending with a business model canvas pitch. Next, I join NTU’s Impact for Southeast Asia (i-SEA) Influence cohort in Singapore, with masterclasses on AI literacy and fact-checking and a hackathon on information integrity.</p>
+          </div>
+        </article>
+      </div>
+      <ul class="online" aria-label="Online and virtual programs">
+        <li><span class="where">INDONESIA · ONLINE</span><div><strong>Guest speaker, LINK 2026</strong> (Linking Ideas, Nations and Knowledge)<p>Spoke to students of SMA Islam Al Azhar 15 Kalibanteng about student life at FTU and in Vietnam, invited by a friend from the Harbin summer school.</p></div></li>
+        <li><span class="where">KOREA · ONLINE</span><div><strong>Hanyang University</strong>, HOPE Online Pre-Exchange · Jul 2026<p>Microeconomics (A) and Global Entrepreneurship.</p></div></li>
+        <li><span class="where">GLOBAL · VIRTUAL TEAM</span><div><strong>X-Culture</strong>, International Business Consultant · Aug–Dec 2025<p>Built a market expansion strategy for Qualz.AI with a global virtual team. Top 10% on the pre-project aptitude test among 6,000+ participants.</p></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="gallery">
+  <div class="wrap">
+    <div class="label"><h2>Moments</h2><p>Competitions and events I am proud of</p></div>
+    <div class="content">
+      <div class="stories">
+        <article class="story" id="album-nckh">
+          <div class="collage n6"><button type="button" class="ph p1" data-full="nckh_1.jpg" data-cap="Award ceremony with my teammates"><img src="nckh_1.jpg" alt="Award ceremony with my teammates" loading="lazy"></button><button type="button" class="ph p2" data-full="nckh_2.jpg" data-cap="Final round, with our supervisor"><img src="nckh_2.jpg" alt="Final round, with our supervisor" loading="lazy"></button><button type="button" class="ph p3 cert" data-full="nckh_cap_bo_giay_chung_nhan.jpg" data-cap="Certificate, Second Prize, Ministerial-Level Science and Technology Award for University Students 2025"><img src="nckh_cap_bo_giay_chung_nhan.jpg" alt="Certificate, Second Prize, Ministerial-Level Science and Technology Award for University Students 2025" loading="lazy"></button><button type="button" class="ph p4" data-full="nckh_3.jpg" data-cap="Opening ceremony with the FTU delegation"><img src="nckh_3.jpg" alt="Opening ceremony with the FTU delegation" loading="lazy"></button><button type="button" class="ph p5 cert" data-full="nckh_cap_bo_bang_khen_tw_doan.jpg" data-cap="Commendation from the Ho Chi Minh Communist Youth Union Central Committee"><img src="nckh_cap_bo_bang_khen_tw_doan.jpg" alt="Commendation from the Ho Chi Minh Communist Youth Union Central Committee" loading="lazy"></button><button type="button" class="ph p6 cert" data-full="nckh_cap_truong_giay_khen.jpg" data-cap="First Prize, FTU Student Research Contest 2025"><img src="nckh_cap_truong_giay_khen.jpg" alt="First Prize, FTU Student Research Contest 2025" loading="lazy"></button></div>
+          <div class="story-text">
+            <p class="where">NHA TRANG UNIVERSITY · 2025</p>
+            <h3>Science and Technology Award for University Students</h3>
+            <p class="when">Final round and award ceremony</p>
+            <p>Our team from FTU won Second Prize at the national student research award with our study on brand transparency, after more than a year of work with our supervisor Dr. Dinh Van Hoang. The same study won First Prize at FTU’s Student Research Contest and earned a commendation from the Ho Chi Minh Communist Youth Union Central Committee.</p>
+          </div>
+        </article>
+        <article class="story" id="album-denmark">
+          <div class="collage n4"><button type="button" class="ph p1" data-full="denmark_1.jpg" data-cap="With Ambassador Nicolai Prytz"><img src="denmark_1.jpg" alt="With Ambassador Nicolai Prytz" loading="lazy"></button><button type="button" class="ph p2" data-full="denmark_3.jpg" data-cap="Participants and organizers at the Embassy of Denmark"><img src="denmark_3.jpg" alt="Participants and organizers at the Embassy of Denmark" loading="lazy"></button><button type="button" class="ph p3" data-full="denmark_4.jpg" data-cap="Certificate ceremony at the residence"><img src="denmark_4.jpg" alt="Certificate ceremony at the residence" loading="lazy"></button><button type="button" class="ph p4" data-full="denmark_2.jpg" data-cap="Certificates of participation"><img src="denmark_2.jpg" alt="Certificates of participation" loading="lazy"></button></div>
+          <div class="story-text">
+            <p class="where">EMBASSY OF DENMARK · HANOI</p>
+            <h3>Youth Debate on Food Loss and Waste</h3>
+            <p class="when">October 2025 · Top 4 Exceptional Team</p>
+            <p>We debated food loss and waste at the residence of the Danish Ambassador, as part of Denmark’s program on food safety in Vietnam’s food and feed value chain, and I met Ambassador Nicolai Prytz.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="awards">
+  <div class="wrap">
+    <div class="label"><h2>Honors &amp; Awards</h2><p>Competitions and scholarships, newest first</p></div>
+    <div class="content">
+      <ol class="timeline">
+        <li><time datetime="2026-01">Jan 2026</time><div><strong>Top 10 Outstanding Projects</strong>, TEC Go Startup Program<p>Foreign Trade University · with <a href="#ventures">Orango</a></p></div></li>
+        <li><time datetime="2025-11">Nov 2025</time><div><strong>Second Prize</strong>, Ministerial-Level Science and Technology Award for University Students<p>Ho Chi Minh Communist Youth Union Central Committee, certified by the Ministry of Education and Training</p></div></li>
+        <li><time datetime="2025-10">Oct 2025</time><div><strong>Semi-final</strong>, Eureka Scientific Research Award 2025<p>Ho Chi Minh City Communist Youth Union, Vietnam National University Ho Chi Minh City</p></div></li>
+        <li><time datetime="2025-10">Oct 2025</time><div><strong>Top 4 Exceptional Team</strong>, Youth Debate on Food Loss and Waste<p>Embassy of Denmark in Vietnam</p></div></li>
+        <li><time datetime="2025-06">Jun 2025</time><div><strong>First Prize</strong>, Student Scientific Research Contest<p>Foreign Trade University</p></div></li>
+        <li><time datetime="2025-04">Apr 2025</time><div><strong>Yasuhara Memorial Foundation Scholarship</strong><p>For the Kansai University exchange, one of at most two FTU recipients</p></div></li>
+        <li><time datetime="2024-11">Nov 2024</time><div><strong>Top 15</strong>, Environmental Case Challenge RE-PLASTIC<p>Unilever and YouthSpeak, AIESEC in Vietnam</p></div></li>
+        <li><time datetime="2023-07">Jul 2023</time><div><strong>Second Prize</strong>, Final Round, V-Business Plan Competition<p>Waseda University, JICA Vietnam VJCC Project and Foreign Trade University</p></div></li>
+      </ol>
+
+      <details class="certs">
+        <summary>View certificates</summary>
+        <div class="gallery">
+        <button type="button" data-full="nckh_cap_bo_giay_chung_nhan.jpg" data-cap="Second Prize certificate, Ministry of Education and Training (2025)"><img src="nckh_cap_bo_giay_chung_nhan.jpg" alt="" loading="lazy"><span>Second Prize · Ministry of Education and Training</span></button>
+        <button type="button" data-full="nckh_cap_bo_bang_khen_tw_doan.jpg" data-cap="Certificate of Merit, Central Committee of the Ho Chi Minh Communist Youth Union (2025)"><img src="nckh_cap_bo_bang_khen_tw_doan.jpg" alt="" loading="lazy"><span>Certificate of Merit · Central Youth Union</span></button>
+        <button type="button" data-full="nckh_cap_truong_giay_khen.jpg" data-cap="First Prize, FTU Student Research Contest (2025)"><img src="nckh_cap_truong_giay_khen.jpg" alt="" loading="lazy"><span>First Prize · FTU Student Research Contest</span></button>
+        <button type="button" data-full="icfaa_2026_presentation.jpg" data-cap="Certificate of Presentation, ICFAA 2026"><img src="icfaa_2026_presentation.jpg" alt="" loading="lazy"><span>Certificate of Presentation · ICFAA 2026</span></button>
+        <button type="button" data-full="oxford_ai_digital_government.jpg" data-cap="AI and Digital Transformation in Government, Oxford Saïd Business School and UNESCO (2026)"><img src="oxford_ai_digital_government.jpg" alt="" loading="lazy"><span>AI and Digital Transformation in Government · Oxford Saïd × UNESCO</span></button>
+        <button type="button" data-full="google_data_analytics.jpg" data-cap="Google Data Analytics Professional Certificate (2026)"><img src="google_data_analytics.jpg" alt="" loading="lazy"><span>Google Data Analytics</span></button>
+        <button type="button" data-full="google_business_intelligence.jpg" data-cap="Google Business Intelligence Professional Certificate (2026)"><img src="google_business_intelligence.jpg" alt="" loading="lazy"><span>Google Business Intelligence</span></button>
+        <button type="button" data-full="google_project_management.jpg" data-cap="Google Project Management Professional Certificate (2026)"><img src="google_project_management.jpg" alt="" loading="lazy"><span>Google Project Management</span></button>
+        <button type="button" data-full="unesco_ethics_of_ai.jpg" data-cap="Global MOOC on the Ethics of AI, UNESCO (2026)"><img src="unesco_ethics_of_ai.jpg" alt="" loading="lazy"><span>Ethics of AI · UNESCO</span></button>
+        <button type="button" data-full="xculture_certificate.jpg" data-cap="International Business Consulting Certificate, X-Culture (2025)"><img src="xculture_certificate.jpg" alt="" loading="lazy"><span>International Business Consulting · X-Culture</span></button>
+        <button type="button" data-full="eureka_2025.jpg" data-cap="Eureka Student Scientific Research Prize 2025"><img src="eureka_2025.jpg" alt="" loading="lazy"><span>Eureka Scientific Research Award 2025</span></button>
+        <button type="button" data-full="denmark_food_loss_debate.jpg" data-cap="Food Loss and Waste Debate, Embassy of Denmark (2025)"><img src="denmark_food_loss_debate.jpg" alt="" loading="lazy"><span>Food Loss and Waste Debate · Embassy of Denmark</span></button>
+        <button type="button" data-full="vietnam_singapore_changemaker_camp.jpg" data-cap="Vietnam–Singapore Changemaker Impact Camp (2024)"><img src="vietnam_singapore_changemaker_camp.jpg" alt="" loading="lazy"><span>Changemaker Impact Camp · FTU × SUSS</span></button>
+        <button type="button" data-full="vbiz_2023.jpg" data-cap="2023 Business Plan Competition, Final Round (VJCC, JICA, Waseda)"><img src="vbiz_2023.jpg" alt="" loading="lazy"><span>Second Prize · V-Business 2023</span></button>
+        <button type="button" data-full="panasonic_certificate.jpg" data-cap="Basic Business Philosophy and Basic Business Manner, Panasonic Vietnam (2024)"><img src="panasonic_certificate.jpg" alt="" loading="lazy"><span>Basic Business Philosophy · Panasonic</span></button>
+      </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="block" id="experience">
+  <div class="wrap">
+    <div class="label"><h2>Experience</h2><p>Research support, teaching and student organizations</p></div>
+    <div class="content">
+      <ul class="roles">
+        <li class="role">
+          <div class="logo"><img src="irek.png" alt="IREK logo"></div>
+          <div>
+            <h3>Research Intern</h3>
+            <p class="org">Institute for Research and Knowledge Transfer (IREK), Thanh Do University · Dec 2023–Dec 2024</p>
+            <ul>
+              <li>Supported research, publications and seminars on knowledge transfer, higher education policy and scholarly communication</li>
+              <li>Coordinated training programs such as the Research Coach in Social Sciences, and seminars with the VNU Center for Education Quality Accreditation</li>
+              <li>Curated and translated 13 articles on global education governance and knowledge management</li>
+            </ul>
+          </div>
+        </li>
+        <li class="role">
+          <div class="logo"><img src="vnuis.jpg" alt="International School, Vietnam National University logo"></div>
+          <div>
+            <h3>Teaching Assistant</h3>
+            <p class="org">International School, Vietnam National University, Hanoi · Aug–Dec 2024</p>
+            <ul>
+              <li>Assisted Dr. Dao Cong Tuan in Business Organization, preparing MNC business cases and supporting lectures</li>
+              <li>Helped organize events and receive C-level guests</li>
+            </ul>
+          </div>
+        </li>
+        <li class="role">
+          <div class="logo"><img src="hrc.jpg" alt="Human Resources Club FTU logo"></div>
+          <div>
+            <h3>Member, External Affairs</h3>
+            <p class="org">Human Resources Club (HRC), Foreign Trade University · Oct 2022–Jun 2023</p>
+            <ul>
+              <li>Managed 190+ active job postings on the club's recruitment platform <a href="https://hrc.com.vn" target="_blank" rel="noopener">hrc.com.vn</a></li>
+              <li>Handled B2B accounts for 19 corporate partners, including Savills, JLL, MB Bank and VPBank</li>
+              <li>Organized 772 student CVs for Internship Race and reached 116% of the revenue target in three weeks</li>
+            </ul>
+          </div>
+        </li>
+        <li class="role">
+          <div class="logo"><img src="aiesec.jpg" alt="AIESEC logo"></div>
+          <div>
+            <h3>Ambassador</h3>
+            <p class="org">AIESEC in Vietnam · Sep–Nov 2023</p>
+            <ul>
+              <li>Created recruitment content for my TikTok channel <a href="https://www.tiktok.com/@nguyenbup_" target="_blank" rel="noopener">Búp</a> (13,000+ followers), reaching 7,000+ views in a campaign that engaged 1,500+ young people</li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="block contact" id="contact">
+  <div class="wrap">
+    <div class="label"><h2>Contact</h2><p>Happy to talk about research and collaboration</p></div>
+    <div class="content">
+      <dl>
+        <dt>Email</dt><dd><a href="mailto:nguyennnt0703.work@gmail.com">nguyennnt0703.work@gmail.com</a></dd>
+        <dt>ORCID</dt><dd><a href="https://orcid.org/0009-0003-2528-8995" target="_blank" rel="noopener">0009-0003-2528-8995</a></dd>
+        <dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/nguy%C3%AAn-thu%E1%BB%B7-289301394/" target="_blank" rel="noopener">Nguyên Thuỷ</a></dd>
+        <dt>Threads</dt><dd><a href="https://www.threads.com/@nguyenbup_" target="_blank" rel="noopener">@nguyenbup_</a></dd>
+        <dt>TikTok</dt><dd><a href="https://www.tiktok.com/@nguyenbup_" target="_blank" rel="noopener">@nguyenbup_</a></dd>
+        <dt>IFE</dt><dd><a href="https://www.instagram.com/ieltsforeveryone.ife/" target="_blank" rel="noopener">Instagram @ieltsforeveryone.ife</a></dd>
+        <dt>Languages</dt><dd>Vietnamese (native) · English (IELTS 7.5) · Japanese (JLPT N4)</dd>
+        <dt>Based in</dt><dd>Hanoi, Vietnam</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">© 2026 Nguyen Nang Thuy Nguyen</div></footer>
+
+<dialog id="cv-viewer" class="cv-dlg" aria-label="Curriculum vitae">
+  <div class="cv-bar"><strong>Curriculum Vitae</strong><span class="cv-actions"><a href="CV_Nguyen_Nang_Thuy_Nguyen.pdf" download>Download PDF</a><button type="button" id="cv-close">Close</button></span></div>
+  <div class="cv-pages"><img src="cv_p1.jpg" alt="CV, page 1"><img src="cv_p2.jpg" alt="CV, page 2"></div>
+</dialog>
+
+<dialog id="viewer" aria-label="Image viewer">
+  <img id="viewer-img" alt="">
+  <div class="cap"><span id="viewer-cap"></span><button type="button" id="viewer-close">Close</button></div>
+</dialog>
+
+<script>
+(function () {
+  var dlg = document.getElementById('viewer');
+  var img = document.getElementById('viewer-img');
+  var cap = document.getElementById('viewer-cap');
+  document.querySelectorAll('[data-full]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      img.src = b.getAttribute('data-full');
+      img.alt = b.getAttribute('data-cap') || '';
+      cap.textContent = b.getAttribute('data-cap') || '';
+      if (dlg.showModal) dlg.showModal();
+    });
+  });
+  document.getElementById('viewer-close').addEventListener('click', function () { dlg.close(); });
+  dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+  var cv = document.getElementById('cv-viewer');
+  document.getElementById('open-cv').addEventListener('click', function () { if (cv.showModal) cv.showModal(); });
+  document.getElementById('cv-close').addEventListener('click', function () { cv.close(); });
+  cv.addEventListener('click', function (e) { if (e.target === cv) cv.close(); });
+})();
+</script>
+</body>
+</html>
